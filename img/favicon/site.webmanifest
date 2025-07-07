@@ -1,0 +1,21 @@
+{
+  "name": "Art by Ant",
+  "short_name": "Art by Ant",
+  "icons": [
+    {
+      "src": "/img/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/img/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#e4cb15",
+  "background_color": "#1c1c1c",
+  "display": "standalone"
+}

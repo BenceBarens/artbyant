@@ -11,8 +11,160 @@
     font-style: normal;
 }
 
+html, body{
+    margin: 0;
+    scrollbar-gutter: stable;
+}
+
 h1, h2, h3, h4, h5, h6{
     font-family: "EB Garamond", serif;
     font-weight: 500;
     font-style: normal;
+    text-transform: uppercase;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+h2{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+::selection {
+    background: #e4cb16;
+    color: #1c1c1c;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    main {
+        animation: fadeIn 1s ease;
+    }
+}
+
+main{
+    min-height: 95vh;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+span{
+    background-color: #e4cb16;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: smaller;
+    margin-right: .5rem;
+    padding: .2rem .5rem;
+    border-radius: 10rem;
+}
+
+header{
+    background-color: #1c1c1c;
+    color: white;
+    padding: .5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+header img{
+    width: 3rem;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul a{
+    padding: .5rem 1rem;
+    border-bottom: #e4cb16 0rem solid;
+}
+
+nav ul a:hover{
+    border-bottom: #e4cb16 .5rem solid;
+}
+
+#gallery .wrapper{
+    background-color: #e4cb16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    margin-bottom: 5rem;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 8rem;
+    padding: 1rem 5rem;
+    place-items: center;
+}
+
+.gallery article{
+    display: flex;
+    max-width: 20rem;
+}
+
+.gallery article:hover{
+    transform: scale(1.05);
+}
+
+.gallery article a{
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    width: 100%;
+}
+
+.gallery article h2::before, .gallery article h2::after{
+    content: '"';
+    display: inline;
+}
+
+.gallery article div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.gallery article img{
+    max-width: 20rem;
+    max-height: 30rem;
+    display: block;
+}
+
+.gallery article p{
+    margin: .5rem;
 }

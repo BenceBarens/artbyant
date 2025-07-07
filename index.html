@@ -5,17 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ART BY ANT</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+    <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Art by Ant">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
 </head>
-<body>
+<body id="gallery">
     <header>
-        Header
+        <nav>
+            <a href=""><img src="img/logo.svg" alt=""></a>
+            <ul>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">Exhibitions</a></li>
+                <li><a href="">Visual universe</a></li>
+                <li><a href="">Poetry</a></li>
+                <li><a href="">Film</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
-        <h1>Art by Ant</h1>
-        <p>Antoni</p>
+        <div class="wrapper">
+            <h1>Gallery</h1>
+        </div>
+        <div class="gallery">
+            <article>
+            <a href="img/art/demo-1.jpg" class="glightbox" data-gallery="gallery1">
+                <h2>Titel of artwork</h2>
+                <img src="img/art/demo-1.jpg" alt="">
+                <div>
+                    <p>70 x 100 cm</p>
+                    <p>€200,-</p>
+                </div>
+                <p><span>In exhibition</span><span>Sold</span></p>
+            </a>
+            </article>
+            <article>
+            <a href="img/art/demo-1.jpg" class="glightbox" data-gallery="gallery1">
+                <h2>Titel of artwork</h2>
+                <img src="img/art/demo-1.jpg" alt="">
+                <div>
+                    <p>70 x 100 cm</p>
+                    <p>€200,-</p>
+                </div>
+                <p><span>In exhibition</span><span>Sold</span></p>
+            </a>
+            </article>
+            <article>
+            <a href="img/art/demo-1.jpg" class="glightbox" data-gallery="gallery1">
+                <h2>Titel of artwork</h2>
+                <img src="img/art/demo-1.jpg" alt="">
+                <div>
+                    <p>70 x 100 cm</p>
+                    <p>€200,-</p>
+                </div>
+                <p><span>In exhibition</span><span>Sold</span></p>
+            </a>
+            </article>
+            <article>
+            <a href="img/art/demo-1.jpg" class="glightbox" data-gallery="gallery1">
+                <h2>Titel of artwork</h2>
+                <img src="img/art/demo-1.jpg" alt="">
+                <div>
+                    <p>70 x 100 cm</p>
+                    <p>€200,-</p>
+                </div>
+                <p><span>In exhibition</span><span>Sold</span></p>
+            </a>
+            </article>
+            <article>
+            <a href="img/art/demo-1.jpg" class="glightbox" data-gallery="gallery1">
+                <h2>Titel of artwork</h2>
+                <img src="img/art/demo-1.jpg" alt="">
+                <div>
+                    <p>70 x 100 cm</p>
+                    <p>€200,-</p>
+                </div>
+                <p><span>In exhibition</span><span>Sold</span></p>
+            </a>
+            </article>
+        </div>
     </main>
+
     <footer>
         Footer
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+    </script>
 </body>
 </html>
