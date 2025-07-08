@@ -12,10 +12,8 @@ let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
 if (window.scrollY > lastScrollY) {
-    // Scrolling down
     header.classList.add('hide-header');
 } else {
-    // Scrolling up
     header.classList.remove('hide-header');
 }
 lastScrollY = window.scrollY;
@@ -29,10 +27,20 @@ detail_view.addEventListener('click', ()=> {
     detail_view.classList.add("active");
     grid_view.classList.remove("active");
     gallery.classList.remove("gallery-condensed");
-})
+});
 
 grid_view.addEventListener('click', ()=> {
     detail_view.classList.remove("active");
     grid_view.classList.add("active");
     gallery.classList.add("gallery-condensed");
-})
+});
+
+const menuButton = document.querySelector('#menu-toggle');
+
+menuButton.addEventListener('click', ()=> {
+    if (header.classList.contains('nav-expanded')){
+        header.classList.remove('nav-expanded')
+    } else{
+        header.classList.add('nav-expanded')
+    }
+});

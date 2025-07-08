@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 h1, h2{
@@ -92,8 +92,7 @@ header{
 }
 
 header img{
-    width: 2.5rem;
-    margin: .25rem;
+    width: 3rem;
 }
 
 header nav{
@@ -101,6 +100,97 @@ header nav{
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    header nav{
+        align-items: flex-start;
+        flex-direction: column;
+        padding: .5rem;
+    }
+
+    header nav>div{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    header nav ul{
+        opacity: 0;
+        pointer-events: none;
+        align-self: flex-end;
+        max-height: 0;
+        margin: 0;
+    }
+
+    #menu-toggle {
+        display: flex;
+        background: none;
+        margin: auto 0;
+        border: none;
+        flex-direction: column;
+        gap: .3rem;
+    }
+
+    #menu-toggle img{
+        width: 2rem;
+        position: static;
+    }
+
+    header.nav-expanded #menu-toggle img:nth-child(2){
+        opacity: 0;
+    }
+
+    header.nav-expanded #menu-toggle img:nth-child(1){
+        transform: rotate(45deg);
+    }
+    header.nav-expanded #menu-toggle img:nth-child(3){
+        transform: rotate(-45deg);
+        margin-top: -1.2rem;
+    }
+    
+    header.nav-expanded{
+        background-color: #1c1c1c;
+        color: white;
+        padding-bottom: 2rem;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+    }
+
+    header.nav-expanded.hide-header{
+        transform: translateY(0);
+    }
+
+    header.nav-expanded nav ul{
+        opacity: 1;
+        pointer-events: all;
+        max-height: 300rem;
+    }
+
+    header.nav-expanded nav{
+        height: auto;
+    }
+
+    header nav ul{
+        flex-direction: column;
+        text-align: right;
+        margin-top: 1rem;
+    }
+
+    header nav ul a{
+        box-shadow: none;
+        padding: .5rem;
+        border-right: rgba(28, 28, 28, 0) 0.5rem solid;
+    }
+
+    header nav ul .current{
+        border-right: #e4cb16 0.5rem solid;
+        box-shadow: none;
+    }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -125,12 +215,13 @@ nav ul{
 }
 
 nav ul a{
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+    display: block;
     box-shadow:0 0 0 0rem #e4cb16 inset;
     text-decoration: none;
 }
 
-nav ul a:hover, .current{
+nav ul a:hover, nav ul .current{
     box-shadow: 0 -1rem 0rem -0.5rem #e4cb16 inset;
 }
 
@@ -187,7 +278,7 @@ footer{
 }
 
 .gallery article:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .gallery article a{
@@ -248,6 +339,9 @@ footer{
 
 #view-toggle button{
     background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
