@@ -174,9 +174,13 @@ header nav{
     header.nav-expanded{
         background-color: #1c1c1c;
         color: white;
-        padding-bottom: 2rem;
+        padding-bottom: 3rem;
         border-bottom-left-radius: 2rem;
         border-bottom-right-radius: 2rem;
+    }
+
+    header.nav-expanded img{
+        filter: none;
     }
 
     header.nav-expanded.hide-header{
