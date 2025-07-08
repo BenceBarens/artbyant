@@ -13,7 +13,6 @@
 
 html, body{
     margin: 0;
-    scrollbar-gutter: stable;
     
 }
 
@@ -43,6 +42,24 @@ a{
 ::selection {
     background: #e4cb16;
     color: #1c1c1c;
+}
+
+.skip-link {
+  position: absolute;
+  top: -20rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e4cb16;
+  color: #1c1c1c;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: left 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
 }
 
 @keyframes fadeIn {
@@ -125,6 +142,7 @@ header nav{
         align-self: flex-end;
         max-height: 0;
         margin: 0;
+        display: inline;
     }
 
     #menu-toggle {
@@ -168,7 +186,7 @@ header nav{
     header.nav-expanded nav ul{
         opacity: 1;
         pointer-events: all;
-        max-height: 300rem;
+        max-height: 20rem;
     }
 
     header.nav-expanded nav{
@@ -191,6 +209,10 @@ header nav{
         border-right: #e4cb16 0.5rem solid;
         box-shadow: none;
     }
+
+    header nav ul a:hover{
+        box-shadow: none;
+    }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -199,9 +221,17 @@ header nav{
         color: white;
     }
 
+    .scrolled img{
+        filter: none;
+    }
+
     header{
         background-color: rgba(28, 28, 28, 0);
         color: #1c1c1c;
+    }
+
+    header img{
+        filter: brightness(0) saturate(100%) invert(7%) sepia(6%) saturate(21%) hue-rotate(322deg) brightness(101%) contrast(90%);
     }
 
     .hide-header {
@@ -235,7 +265,7 @@ footer{
     text-transform: uppercase;
     color: white;
     padding: 2rem 4rem;
-    border-top: #e4cb16 0.2rem solid;
+    border-top: #e4cb16 0.5rem solid;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
@@ -266,15 +296,15 @@ footer{
 
 .gallery{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 8rem;
-    padding: 1rem 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 10rem;
+    padding: 1rem 10rem;
     place-items: center;
 }
 
 .gallery article{
     display: flex;
-    max-width: 20rem;
+    max-width: 15rem;
 }
 
 .gallery article:hover{
@@ -301,7 +331,7 @@ footer{
 }
 
 .gallery article img{
-    max-width: 20rem;
+    max-width: 15rem;
     max-height: 30rem;
     display: block;
 }
