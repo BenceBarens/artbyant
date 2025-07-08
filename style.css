@@ -84,15 +84,16 @@ span{
 header{
     background-color: rgba(28, 28, 28, 1);
     color: white;
-    padding: .5rem;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
+    transition: all 500ms ease;
 }
 
 header img{
-    width: 3rem;
+    width: 2.5rem;
+    margin: .25rem;
 }
 
 header nav{
@@ -114,7 +115,7 @@ header nav{
     }
 
     .hide-header {
-    transform: translateY(-100%);
+        transform: translateY(-100%);
     }
 }
 
@@ -124,13 +125,17 @@ nav ul{
 }
 
 nav ul a{
-    padding: .5rem 1rem;
-    border-bottom: #e4cb16 0rem solid;
+    padding: 1rem;
+    box-shadow:0 0 0 0rem #e4cb16 inset;
     text-decoration: none;
 }
 
-nav ul a:hover{
-    border-bottom: #e4cb16 .5rem solid;
+nav ul a:hover, .current{
+    box-shadow: 0 -1rem 0rem -0.5rem #e4cb16 inset;
+}
+
+.current{
+    font-weight: 700;
 }
 
 footer{
@@ -231,16 +236,14 @@ footer{
 
 #view-toggle{
     display: flex;
-    position: fixed;
-    bottom: 0rem;
-    right: 2rem;
-    justify-content: center;
+    justify-content: right;
     margin-bottom: 2rem;
-    box-shadow: rgba(28, 28, 28, .2) 0 0 .5rem;
+    margin: 2rem;
     border-radius: 10rem;
-    background-color: white;
-    width: fit-content;
     z-index: 1;
+    width: fit-content;
+    margin: 2rem auto;
+    background-color: rgba(28, 28, 28, 0.1);
 }
 
 #view-toggle button{
@@ -279,13 +282,6 @@ footer{
     .gallery article img{
         max-width: 15rem;
         max-height: 25rem;
-    }
-
-    #view-toggle{
-        position: sticky;
-        top: 5rem;
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     .gallery-condensed{
