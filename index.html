@@ -19,7 +19,7 @@
     <header>
         <nav>
             <div>
-                <a href=""><img src="img/logo.svg" alt=""></a>
+                <a href=""><img src="img/logo.svg" alt="Logo of Antoni"></a>
                 <button id="menu-toggle" aria-label="Toggle menu">
                     <img src="img/icons/menu1.svg" alt="">
                     <img src="img/icons/menu2.svg" alt="">
@@ -29,11 +29,17 @@
             <ul id="main-menu" aria-hidden="true">
                 <li><a href="" class="current">Gallery</a></li>
                 <li><a href="">Exhibitions</a></li>
-                <li><a href="">Visual universe</a></li>
+                <li><a href="">Map</a></li>
                 <li><a href="">Poetry</a></li>
                 <li><a href="">Film</a></li>
                 <li><a href="">About</a></li>
                 <li><a href="">Contact</a></li>
+                <li>
+                    <div class="language-switcher">
+                        <button onclick="switchLanguage('en')" id="lang-en"><img src="img/icons/english.svg" alt="Switch to English"></button>
+                        <button onclick="switchLanguage('es')" id="lang-es"><img src="img/icons/spanish.svg" alt="Switch to Spanish"></button>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -42,9 +48,12 @@
         <div class="wrapper">
             <h1>Gallery</h1>
         </div>
-        <div id="view-toggle">
-            <button class="active" id="detail-view"><img src="img/icons/detail.svg" alt="Detail view"></button>
-            <button id="grid-view"><img src="img/icons/grid.svg" alt="Grid view"></button>
+        <div id="gallery2">
+            <a href="">About the art</a>
+            <div id="view-toggle">
+                <button class="active" id="detail-view"><img src="img/icons/detail.svg" alt="Detail view"></button>
+                <button id="grid-view"><img src="img/icons/grid.svg" alt="Grid view"></button>
+            </div>
         </div>
         <div class="gallery">
             <article>
@@ -282,7 +291,8 @@
         </ul>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>const lightbox = GLightbox({ selector: '.glightbox' });</script>
 </body>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:opsz@14..32&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro&family=Inter:opsz@14..32&display=swap');
 
 *{
     scroll-behavior: smooth;
@@ -17,8 +17,8 @@ html, body{
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: "EB Garamond", serif;
-    font-weight: 500;
+    font-family: "Castoro", serif;
+    font-weight: 400;
     font-style: normal;
     text-transform: uppercase;
 }
@@ -98,6 +98,16 @@ span{
     border-radius: 10rem;
 }
 
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* HEADER ------------------------------------------------------------------------------------ */
+
 header{
     background-color: rgba(28, 28, 28, 1);
     color: white;
@@ -123,11 +133,33 @@ header nav{
     display: none;
 }
 
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 1rem;
+}
+
+nav ul a{
+    padding: 1.5rem 1rem;
+    display: block;
+    box-shadow:0 0 0 0rem #e4cb16 inset;
+    text-decoration: none;
+}
+
+nav ul a:hover, nav ul .current{
+    box-shadow: 0 -1rem 0rem -0.5rem #e4cb16 inset;
+}
+
+.current{
+    font-weight: 700;
+}
+
 @media only screen and (max-width: 768px) {
     header nav{
         align-items: flex-start;
         flex-direction: column;
         padding: .5rem;
+        margin-bottom: -.5rem;
     }
 
     header nav>div{
@@ -174,9 +206,9 @@ header nav{
     header.nav-expanded{
         background-color: #1c1c1c;
         color: white;
-        padding-bottom: 3rem;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
+        padding-bottom: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
     }
 
     header.nav-expanded img{
@@ -217,6 +249,38 @@ header nav{
     header nav ul a:hover{
         box-shadow: none;
     }
+
+    .language-switcher{
+        padding-top: 2rem;
+        align-items: flex-end;
+    }
+}
+
+.language-switcher .selected{
+    border: #e4cb16 0.2rem solid;
+}
+
+.language-switcher img{
+    filter: none;
+    width: 2rem;
+}
+
+.language-switcher button{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .4rem;
+    overflow: hidden;
+}
+
+.language-switcher{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0 1rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -243,25 +307,7 @@ header nav{
     }
 }
 
-nav ul{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-nav ul a{
-    padding: 1.5rem 1rem;
-    display: block;
-    box-shadow:0 0 0 0rem #e4cb16 inset;
-    text-decoration: none;
-}
-
-nav ul a:hover, nav ul .current{
-    box-shadow: 0 -1rem 0rem -0.5rem #e4cb16 inset;
-}
-
-.current{
-    font-weight: 700;
-}
+/* FOOTER ------------------------------------------------------------------------------------ */
 
 footer{
     background-color: #1c1c1c;
@@ -278,7 +324,7 @@ footer{
 
 @media only screen and (max-width: 768px) {
     footer{
-        font-size: small;
+        font-size: smaller;
         text-align: center;
         gap: 2rem;
         justify-content: center;
@@ -291,6 +337,7 @@ footer{
     background-image: url('img/gallery_wrapper.jpg');
     background-size: cover;
     background-position:center;
+    background-attachment:initial;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -304,6 +351,25 @@ footer{
     gap: 10rem;
     padding: 1rem 10rem;
     place-items: center;
+}
+
+#gallery2{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+#gallery2 a{
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background-color: #e4cb16;
+    border-radius: 10rem;
+    text-transform: uppercase;
+}
+
+#gallery2 a:hover{
+    transform: scale(1.05);
 }
 
 .gallery article{
@@ -350,9 +416,13 @@ footer{
     gap: 3rem;
 }
 
-.gallery-condensed a h2,
 .gallery-condensed a p{
     display: none;
+}
+
+.gallery-condensed a h2{
+    font-size: .8rem;
+    max-width: 10rem;
 }
 
 .gallery-condensed img{
@@ -362,26 +432,18 @@ footer{
 #view-toggle{
     display: flex;
     justify-content: right;
-    margin-bottom: 2rem;
-    margin: 2rem;
     border-radius: 10rem;
-    z-index: 1;
     width: fit-content;
-    margin: 2rem auto;
     background-color: rgba(28, 28, 28, 0.1);
 }
 
 #view-toggle button{
-    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
-    cursor: pointer;
     font-size: 1.5rem;
     border-radius: 10rem;
     width: 4rem;
-    height: 2.5rem;
 }
 
 #view-toggle button.active{
@@ -394,7 +456,7 @@ footer{
 
 @media only screen and (max-width: 768px) {
     #gallery .wrapper{
-        height: 25rem;
+        height: 30rem;
     }
     
     .gallery{

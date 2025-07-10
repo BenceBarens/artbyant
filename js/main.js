@@ -1,7 +1,7 @@
 const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
-if (window.scrollY > 50) {
+if (window.scrollY > 80) {
     header.classList.add('scrolled');
 } else {
     header.classList.remove('scrolled');
@@ -17,22 +17,6 @@ if (window.scrollY > lastScrollY) {
     header.classList.remove('hide-header');
 }
 lastScrollY = window.scrollY;
-});
-
-const detail_view = document.querySelector('#detail-view');
-const grid_view = document.querySelector('#grid-view');
-const gallery = document.querySelector('.gallery');
-
-detail_view.addEventListener('click', ()=> {
-    detail_view.classList.add("active");
-    grid_view.classList.remove("active");
-    gallery.classList.remove("gallery-condensed");
-});
-
-grid_view.addEventListener('click', ()=> {
-    detail_view.classList.remove("active");
-    grid_view.classList.add("active");
-    gallery.classList.add("gallery-condensed");
 });
 
 const menuButton = document.querySelector('#menu-toggle');
@@ -86,3 +70,31 @@ function applyInitialAccessibilityState() {
 
 window.addEventListener('resize', applyInitialAccessibilityState);
 window.addEventListener('load', applyInitialAccessibilityState);
+
+function switchLanguage(lang) {
+  const path = window.location.pathname;
+  const english = document.querySelector('#lang-en');
+  const spanish = document.querySelector('#lang-es');
+
+  if (lang === 'es') {
+    if (!path.startsWith('/es/')) {
+      const newPath = '/es' + path;
+      window.location.pathname = newPath;
+    }
+  }
+
+  if (lang === 'en') {
+    if (path.startsWith('/es/')) {
+      const newPath = path.replace('/es', '');
+      window.location.pathname = newPath || '/';
+    }
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname;
+  const isSpanish = path.startsWith('/es/');
+
+  document.getElementById('lang-en').classList.toggle('selected', !isSpanish);
+  document.getElementById('lang-es').classList.toggle('selected', isSpanish);
+});

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: */icons/*
+Disallow: */favicon/*
+
+Sitemap: https://artbyant.gallery/sitemap.xml
