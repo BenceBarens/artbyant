@@ -202,17 +202,18 @@ nav ul a:hover, nav ul .current{
         transform: rotate(-45deg);
         margin-top: -1.2rem;
     }
-    
-    header.nav-expanded{
+
+    #gallery header.nav-expanded{
         background-color: #1c1c1c;
         color: white;
+    }
+    
+    header.nav-expanded{
+        background-color: white;
+        color: #1c1c1c;
         padding-bottom: 1rem;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
-    }
-
-    header.nav-expanded img{
-        filter: none;
     }
 
     header.nav-expanded.hide-header{
@@ -260,11 +261,6 @@ nav ul a:hover, nav ul .current{
     border: #e4cb16 0.2rem solid;
 }
 
-.language-switcher img{
-    filter: none;
-    width: 2rem;
-}
-
 .language-switcher button{
     padding: 0;
     display: flex;
@@ -284,27 +280,38 @@ nav ul a:hover, nav ul .current{
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .scrolled{
-        background-color: rgba(28, 28, 28, 1);
-        color: white;
-    }
+    #gallery{
+        header img{
+            filter: brightness(0) saturate(100%) invert(7%) sepia(6%) saturate(21%) hue-rotate(322deg) brightness(101%) contrast(90%);
+        }
 
-    .scrolled img{
-        filter: none;
-    }
+        .scrolled{
+            background-color: rgba(28, 28, 28, 1);
+            color: white;
+        }
 
-    header{
-        background-color: rgba(28, 28, 28, 0);
-        color: #1c1c1c;
-    }
+        .scrolled img{
+            filter: none !important;
+        }
 
-    header img{
-        filter: brightness(0) saturate(100%) invert(7%) sepia(6%) saturate(21%) hue-rotate(322deg) brightness(101%) contrast(90%);
+        header.nav-expanded img{
+            filter: none !important;
+        }
+
+        header{
+            background-color: rgba(28, 28, 28, 0);
+            color: #1c1c1c;
+        }
     }
 
     .hide-header {
         transform: translateY(-100%);
     }
+}
+
+.language-switcher img{
+    filter: none !important;
+    width: 2rem;
 }
 
 /* FOOTER ------------------------------------------------------------------------------------ */
@@ -484,4 +491,63 @@ footer{
     .gallery-condensed img{
         width: 5rem;
     }
+}
+
+#about, #map{
+    background-color: #1c1c1c;
+    color: white;
+}
+
+#about main, #map main{
+    margin: 8rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#about main img{
+    width: 20rem;
+    margin: 2rem;
+    height: auto;
+    max-width: 85vw;
+}
+
+#about h1{
+    text-align: left;
+}
+
+#about p, #map p{
+    max-width: 40rem;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 768px) {
+    #about main{
+        margin: 4rem auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    #about h1, #about p{
+        max-width: 85vw;
+    }
+}
+
+#map main img{
+    width: 30rem;
+    margin: 2rem;
+    height: auto;
+    max-width: 85vw;
+}
+
+#body404 main{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 }
