@@ -39,6 +39,10 @@ a{
     color: inherit;
 }
 
+.hidden{
+    display: none;
+}
+
 ::selection {
     background: #e4cb16;
     color: #1c1c1c;
@@ -562,8 +566,8 @@ footer{
 #map3{left: 20%;right: 50%;top: 20%;bottom: 42%;}
 #map4{top: 20%;left: 50%;right: 40%;bottom: 65%;}
 #map5{left: 65%;right: 5%;top: 22%;bottom: 55%;}
-#map6{left: 50%;top: 40%;right: 40%;bottom: 40%;}
-#map7{left: 15%;top: 58%;right: 40%;bottom: 30%;}
+#map6{left: 48%;top: 40%;right: 40%;bottom: 40%;}
+#map7{left: 15%;top: 56%;right: 40%;bottom: 30%;}
 #map8{left: 60%;top: 45%;right: 5%;bottom: 20%;}
 #map9{left: 20%;top: 70%;right: 40%;bottom: 10%;}
 
@@ -581,6 +585,19 @@ footer{
     white-space: nowrap;
 }
 
+.popup img{
+    width: 100%;
+    max-width: 1rem;
+    display: block;
+}
+
+.popup{
+    background-color: white;
+    color: #1c1c1c;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    padding: 2rem;
+}
 
 #body404 main{
     display: flex;
@@ -589,4 +606,8 @@ footer{
     justify-content: center;
     text-align: center;
     flex-direction: column;
+}
+
+.language-switcher{
+    display: none;
 }
