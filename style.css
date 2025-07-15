@@ -207,7 +207,8 @@ nav ul a:hover, nav ul .current{
         margin-top: -1.2rem;
     }
 
-    #gallery header.nav-expanded{
+    #gallery header.nav-expanded,
+    #body404 header.nav-expanded{
         background-color: #1c1c1c;
         color: white;
     }
