@@ -259,6 +259,7 @@ nav ul a:hover, nav ul .current{
 
 .language-switcher .selected{
     border: #e4cb16 0.2rem solid;
+    transition: none;
 }
 
 .language-switcher button{
@@ -542,6 +543,44 @@ footer{
     height: auto;
     max-width: 85vw;
 }
+
+#universe{
+    background-image: url('img/map.png');
+    background-size: cover;
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    position: relative;
+}
+
+#universe div{
+    position: absolute;
+}
+
+#map1{left: 18%;right: 15%;top: 5%;bottom: 75%;}
+#map2{left: 3%;right: 80%;top: 18%;bottom: 35%;}
+#map3{left: 20%;right: 50%;top: 20%;bottom: 42%;}
+#map4{top: 20%;left: 50%;right: 40%;bottom: 65%;}
+#map5{left: 65%;right: 5%;top: 22%;bottom: 55%;}
+#map6{left: 50%;top: 40%;right: 40%;bottom: 40%;}
+#map7{left: 15%;top: 58%;right: 40%;bottom: 30%;}
+#map8{left: 60%;top: 45%;right: 5%;bottom: 20%;}
+#map9{left: 20%;top: 70%;right: 40%;bottom: 10%;}
+
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    color: #1c1c1c;
+    background-color: #e4cb16;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: smaller;
+    padding: .2rem .5rem;
+    border-radius: 10rem;
+    white-space: nowrap;
+}
+
 
 #body404 main{
     display: flex;
