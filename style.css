@@ -542,11 +542,13 @@ footer{
     }
 }
 
-#map main img{
-    width: 30rem;
-    margin: 2rem;
-    height: auto;
-    max-width: 85vw;
+#map{
+    overflow-x: hidden;
+}
+
+#map-hover-instruction{
+    color: #e4cb16;
+    font-weight: bold;
 }
 
 #universe{
@@ -556,6 +558,11 @@ footer{
     height: 30rem;
     display: flex;
     position: relative;
+    border-radius: 50rem;
+}
+
+#universe:hover{
+    box-shadow: rgba(228, 203, 22, 0.2) 0 0 5rem 1rem;
 }
 
 #universe div{
@@ -587,9 +594,7 @@ footer{
 }
 
 .popup img{
-    width: 100%;
-    max-width: 1rem;
-    display: block;
+    display: flex;
 }
 
 .popup{
@@ -598,6 +603,28 @@ footer{
     border-radius: 1rem;
     margin: 2rem 0;
     padding: 2rem;
+    max-width: 35rem;
+}
+
+.popup img{
+    width: 5rem;
+    margin: 1rem;
+    display: inline;
+}
+
+@media screen and (max-width: 768px) {
+    #map main{
+        margin: 4rem 2rem;
+    }
+
+    #universe{
+        width: 80vw;
+        height: 80vw;
+    }
+
+    #map-hover-instruction{
+        display: none;
+    }
 }
 
 #body404 main{

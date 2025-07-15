@@ -36,4 +36,21 @@ hoverTargets.forEach(el => {
     const popup = document.getElementById(targetPopupId);
     if (popup) popup.classList.add('hidden');
   });
+
+  // Keyboard accessibility: focus & blur events
+  el.addEventListener('focus', () => {
+    tooltip.textContent = el.dataset.tooltip;
+    tooltip.style.opacity = 1;
+    popups.forEach(p => p.classList.add('hidden'));
+    const targetPopupId = idMap[el.id];
+    const popup = document.getElementById(targetPopupId);
+    if (popup) popup.classList.remove('hidden');
+  });
+
+  el.addEventListener('blur', () => {
+    tooltip.style.opacity = 0;
+    const targetPopupId = idMap[el.id];
+    const popup = document.getElementById(targetPopupId);
+    if (popup) popup.classList.add('hidden');
+  });
 });
