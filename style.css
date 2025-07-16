@@ -542,9 +542,9 @@ footer{
     }
 }
 
-#map{
+/* #map{
     overflow-x: hidden;
-}
+} */
 
 #map-hover-instruction{
     color: #e4cb16;
@@ -579,18 +579,19 @@ footer{
 #map8{left: 60%;top: 45%;right: 5%;bottom: 20%;}
 #map9{left: 20%;top: 70%;right: 40%;bottom: 10%;}
 
-.tooltip {
+#tooltip {
     position: absolute;
     pointer-events: none;
     opacity: 0;
-    color: #1c1c1c;
+    transition: opacity 0.1s ease;
+    white-space: nowrap;
+    z-index: 10;
     background-color: #e4cb16;
+    color: #1c1c1c;
     text-transform: uppercase;
-    text-align: left;
-    font-size: smaller;
+    font-size: large;
     padding: .2rem .5rem;
     border-radius: 10rem;
-    white-space: nowrap;
 }
 
 .popup img{
@@ -624,6 +625,14 @@ footer{
 
     #map-hover-instruction{
         display: none;
+    }
+
+    .popup{
+        display: none;
+    }
+
+    #universe:hover{
+        box-shadow: none;
     }
 }
 
