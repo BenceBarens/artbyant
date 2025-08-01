@@ -1,3 +1,5 @@
+// Website Made by Bence (All rights reserved © 2018 Bence Barens)
+
 const detail_view = document.querySelector('#detail-view');
 const grid_view = document.querySelector('#grid-view');
 const gallery = document.querySelector('.gallery');

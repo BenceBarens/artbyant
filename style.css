@@ -1,11 +1,11 @@
+/* Website Made by Bence (All rights reserved © 2018 Bence Barens) */
+
 @import url('https://fonts.googleapis.com/css2?family=Castoro&family=Inter:opsz@14..32&display=swap');
 
 *{
     scroll-behavior: smooth;
     transition: all 200ms ease;
-}
-
-*{
+    -webkit-tap-highlight-color: transparent;
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -208,7 +208,8 @@ nav ul a:hover, nav ul .current{
     }
 
     #gallery header.nav-expanded,
-    #body404 header.nav-expanded{
+    #body404 header.nav-expanded,
+    #contact header.nav-expanded{
         background-color: #1c1c1c;
         color: white;
     }
@@ -216,7 +217,7 @@ nav ul a:hover, nav ul .current{
     header.nav-expanded{
         background-color: white;
         color: #1c1c1c;
-        padding-bottom: 1rem;
+        padding-bottom: 2rem;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
     }
@@ -229,6 +230,7 @@ nav ul a:hover, nav ul .current{
         opacity: 1;
         pointer-events: all;
         max-height: 20rem;
+        margin-right: 0.5rem;
     }
 
     header.nav-expanded nav{
@@ -499,6 +501,8 @@ footer{
     }
 }
 
+/* ABOUT/MAP ----------------------------------------------------------------------------------- */
+
 #about, #map{
     background-color: #1c1c1c;
     color: white;
@@ -541,10 +545,6 @@ footer{
         max-width: 85vw;
     }
 }
-
-/* #map{
-    overflow-x: hidden;
-} */
 
 #map-hover-instruction{
     color: #e4cb16;
@@ -635,6 +635,55 @@ footer{
         box-shadow: none;
     }
 }
+
+/* CONTACT ----------------------------------------------------------------------------------- */
+
+#contact main{
+    margin: 8rem 5rem;
+}
+
+#contact form{
+    margin: 1rem auto;
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#contact form label{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#contact form input, #contact form textarea{
+    font-size: large;
+    border: none;
+    border-bottom: #e4cb16 solid 0.2rem;
+    padding: 0.5rem;
+}
+
+#contact form input:focus, #contact form textarea:focus{
+    border-bottom: #1c1c1c solid 0.2rem;
+}
+
+#contact form button{
+    background-color: #e4cb16;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 10rem;
+}
+
+#contact form button:hover{
+    transform: scale(1.05);
+}
+
+#responseMessage{
+    font-size: large;
+    text-align: center;
+}
+
+/* 404 ----------------------------------------------------------------------------------- */
 
 #body404 main{
     display: flex;

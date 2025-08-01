@@ -1,3 +1,5 @@
+// Website Made by Bence (All rights reserved © 2018 Bence Barens)
+
 const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
