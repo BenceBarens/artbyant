@@ -664,6 +664,7 @@ footer{
     max-width: 50rem;
     margin: auto;
     position: relative;
+    transition: all 200ms ease;
 }
 
 .exhibition-timeline > div{
@@ -676,7 +677,7 @@ footer{
 }
 
 .exhibition-timeline summary{
-    display: flex;
+    list-style-position: outside;
 }
 
 .exhibition-timeline summary div{
@@ -711,6 +712,10 @@ footer{
     flex-wrap: wrap;
     gap: 1rem;
     align-items: start;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
 }
 
 .exhibition-pictures img{
@@ -718,23 +723,37 @@ footer{
     object-fit: contain;
 }
 
+details[open] .exhibition-pictures{
+    max-height: 50rem;
+    opacity: 1;
+}
+
 @media screen and (max-width: 768px) {
     .exhibition-timeline{
-        max-width: 100vw;
+        max-width: 90vw;
+        margin: 1rem;
+        margin-left: 2rem;
     }
+
+    .exhibition-timeline summary{
+        max-width: 70vw;
+        margin-left: 1rem;
+    }
+
     .exhibition-timeline summary img {
         width: 2rem;
         height: 2rem;
         border: 0.3rem solid #e4cb16;
-        margin-left: -1.75rem;
+        margin-left: -2.75rem;
     }
 
     .exhibition-timeline summary div{
-    padding: 0.5rem;
-}
+        padding: 0.5rem;
+    }
 
     .exhibition-timeline details{
         padding-left: 1.5rem;
+        max-width: 80vw;
     }
 
     .exhibition-timeline summary h2 {
@@ -746,9 +765,17 @@ footer{
     }
 
     .exhibition-timeline > div{
-    border-left: 0.3rem solid #e4cb16;
-    padding-bottom: 1rem;
-}
+        border-left: 0.3rem solid #e4cb16;
+        padding-bottom: 1rem;
+    }
+
+    .exhibition-pictures img{
+        width: 5rem;
+    }
+
+    .exhibition-pictures{
+        padding: 1rem;
+    }
 }
 
 /* CONTACT ----------------------------------------------------------------------------------- */
