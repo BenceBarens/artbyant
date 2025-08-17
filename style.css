@@ -419,9 +419,12 @@ footer{
 
 .gallery article div{
     display: flex;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
+}
+
+.gallery article div p{
+    max-width: 65%;
 }
 
 .gallery article img{
@@ -674,6 +677,8 @@ footer{
 
 .exhibition-timeline > div:last-child{
     padding-bottom: 0;
+    border: none;
+    padding-left: 0.5rem;
 }
 
 .exhibition-timeline summary{
