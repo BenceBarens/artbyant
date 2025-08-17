@@ -492,6 +492,10 @@ footer{
         padding: 1rem;
     }
 
+    .gallery h2{
+        font-size: 1.2rem;
+    }
+
     .gallery article{
         max-width: 15rem;
     }
@@ -510,6 +514,10 @@ footer{
 
     .gallery-condensed img{
         width: 5rem;
+    }
+
+    .gallery-condensed h2{
+        display: none;
     }
 }
 
