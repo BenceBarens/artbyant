@@ -940,7 +940,7 @@ details[open] .exhibition-pictures{
     font-size: 1.2rem;
     text-transform: uppercase;
     padding: 0.5rem;
-    border-bottom: #e4cb16 solid 0.2rem;
+    border-bottom: white solid 0.1rem;
 }
 
 @media screen and (max-width: 768px) {

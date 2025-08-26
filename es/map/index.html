@@ -1,0 +1,117 @@
+<!DOCTYPE html><!-- Website Made by Bence (All rights reserved © 2025 Bence Barens) -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL UNIVERSO VISUAL</title>
+    <link rel="stylesheet" href="../../style.css">
+
+    <link rel="icon" type="image/png" href="../../img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="../../img/favicon/favicon.svg">
+    <link rel="shortcut icon" href="../../img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../img/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Art by Ant">
+    <link rel="manifest" href="../../img/favicon/site.webmanifest">
+</head>
+<body id="map">
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+    <header>
+        <nav>
+            <div>
+                <a href="../"><img src="../../img/logo.svg" alt="Logotipo de Antoni"></a>
+                <button id="menu-toggle" aria-label="Toggle menu">
+                    <img src="../../img/icons/menu1.svg" alt="">
+                    <img src="../../img/icons/menu2.svg" alt="">
+                    <img src="../../img/icons/menu3.svg" alt="">
+                </button>
+            </div>
+            <ul id="main-menu" aria-hidden="true">
+                <li><a href="../">Galería</a></li>
+                <li><a href="../exhibitions">Exposiciones</a></li>
+                <li><a href="" class="current">Mapa</a></li>
+                <li><a href="../poetry">Poesía</a></li>
+                <li><a href="../film">Cine</a></li>
+                <li><a href="../about">Acerca de</a></li>
+                <li><a href="../contact">Contacto</a></li>
+                <li>
+                    <div class="language-switcher">
+                        <button onclick="switchLanguage('en')" id="lang-en"><img src="../../img/icons/english.svg" alt="Cambiar al inglés"></button>
+                        <button onclick="switchLanguage('es')" id="lang-es"><img src="../../img/icons/spanish.svg" alt="Cambiar al español"></button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div>
+            <h1>El Universo Visual</h1>
+            <p>Antoni es un artista que trasciende la pintura abstracta tradicional al crear El Universo Visual: un mundo cinematográfico que cobra vida a través del arte. En lugar de producir obras independientes, las pinturas de Antoni funcionan como escenas interconectadas de un vasto universo ficticio, similar al universo cinematográfico de una película. Cada pieza es un vistazo a esta realidad en desarrollo, capturando momentos, atmósferas y fragmentos de una narrativa más amplia que existe más allá del marco.</p>
+            <p id="map-hover-instruction">Pasa el cursor sobre cualquier parte del mapa para descubrir el mundo interior.</p>
+            <div class="popup hidden" id="sytre">
+                <img src="../../img/art/compressed/1.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/11.webp" alt="" class="popup-img">
+            </div>
+            <div class="popup hidden" id="united-republic-of-ember">
+                <img src="../../img/art/compressed/3.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/10.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/17.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/19.webp" alt="" class="popup-img">
+            </div>
+            <div class="popup hidden" id="citle">
+                <img src="../../img/art/compressed/7.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/12.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/14.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/15.webp" alt="" class="popup-img">
+            </div>
+            <div class="popup hidden" id="yabude">
+                <img src="../../img/art/compressed/5.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/13.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/21.webp" alt="" class="popup-img">
+            </div>
+            <div class="popup hidden" id="dragons-tail">
+                <img src="../../img/art/compressed/22.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/2.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/4.webp" alt="" class="popup-img">
+            </div>
+            <div class="popup hidden" id="southern-jaw">
+                <img src="../../img/art/compressed/6.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/9.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/16.webp" alt="" class="popup-img">
+            </div>
+            <div class="popup hidden" id="barren-lands">
+                <img src="../../img/art/compressed/23.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/18.webp" alt="" class="popup-img">
+                <img src="../../img/art/compressed/20.webp" alt="" class="popup-img">
+            </div>
+        </div>
+        <div id="universe">
+            <div id="map1" class="hover-target" data-tooltip="Sytre" aria-label="Sytre" tabindex="0"></div>
+            <div id="map2" class="hover-target" data-tooltip="The United Republic of Ember" aria-label="The United Republic of Ember" tabindex="0"></div>
+            <div id="map3" class="hover-target" data-tooltip="Citle" aria-label="Citle" tabindex="0"></div>
+            <div id="map4" class="hover-target" data-tooltip="Citle" aria-label="Citle" tabindex="0"></div>
+            <div id="map5" class="hover-target" data-tooltip="Yabude" aria-label="Yabude" tabindex="0"></div>
+            <div id="map6" class="hover-target" data-tooltip="Dragon's tail" aria-label="Dragon's tail" tabindex="0"></div>
+            <div id="map7" class="hover-target" data-tooltip="Dragon's tail" aria-label="Dragon's tail" tabindex="0"></div>
+            <div id="map8" class="hover-target" data-tooltip="The Southern Jaw" aria-label="The Southern Jaw" tabindex="0"></div>
+            <div id="map9" class="hover-target" data-tooltip="The Barren Lands" aria-label="The Barren Lands" tabindex="0"></div>
+            <div id="tooltip"></div>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li>Instagram <a href="https://www.instagram.com/antoni_vdgeijn/" target="_blank">@antoni_vdgeijn</a></li>
+            <li>Correo electrónico <a href="mailto:contact@artbyant.nl?subject=Art%20by%20Ant&body=Hi%20Antoni%2C" target="_blank">contact@artbyant.nl</a></li>
+        </ul>
+        <ul>
+            <li>Todos los derechos reservados</li>
+            <li>© 2024-2025 Antoni van de Geijn</li>
+            <li>Marca y sitio web <a href="https://bencebarens.nl/en" target="_blank">Made by Bence</a></li>
+        </ul>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/map.js"></script>
+</body>
+</html>
