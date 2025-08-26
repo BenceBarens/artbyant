@@ -374,7 +374,7 @@ footer{
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 10rem;
     padding: 1rem 10rem;
-    place-items: center;
+    place-items: top;
 }
 
 #gallery2{
@@ -501,6 +501,7 @@ footer{
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
         gap: 4rem;
         padding: 1rem;
+        place-items: center;
     }
 
     .gallery h2{
@@ -530,6 +531,10 @@ footer{
 
     .gallery-condensed h2{
         display: none;
+    }
+
+    .gallery-condensed a span{
+        font-size: 0.4rem;
     }
 }
 
