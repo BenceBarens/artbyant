@@ -1,4 +1,4 @@
-// Website Made by Bence (All rights reserved © 2018 Bence Barens)
+// Website Made by Bence (All rights reserved © 2025 Bence Barens)
 
 const header = document.querySelector('header');
 
