@@ -384,7 +384,6 @@ footer{
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 10rem;
     padding: 1rem 10rem;
-    place-items: top;
 }
 
 #gallery2{
@@ -513,6 +512,10 @@ footer{
         place-items: center;
     }
 
+    .gallery-condensed{
+        place-items: initial;
+    }
+
     .gallery h2{
         font-size: 0.6rem;
         margin-bottom: 0.2rem;
@@ -520,10 +523,6 @@ footer{
 
     .gallery article{
         max-width: 15rem;
-    }
-
-    .gallery-condensed adiv{
-        display: none;
     }
 
     .gallery article img{
@@ -597,6 +596,10 @@ footer{
     text-align: justify;
 }
 
+#henk{
+    display: none !important;
+}
+
 @media only screen and (max-width: 768px) {
     #about main{
         margin: 4rem auto;
@@ -609,9 +612,13 @@ footer{
         max-width: 85vw;
     }
 
-    /* TEMP TYPE SHIT YAKNOW HOW IT IS BRUH -------------------------------------------------------------------------------------------- */
-    #about main div img{
+    #imgantoni1, #imgantoni2{
         display: none;
+    }
+
+    #henk{
+        display: flex !important;
+        margin-top: 2rem;
     }
 }
 
