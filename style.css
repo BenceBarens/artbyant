@@ -943,9 +943,51 @@ details[open] .exhibition-pictures{
     border-bottom: white solid 0.1rem;
 }
 
+.poetry2{
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.poetry2 div img{
+    width: 30rem;
+    margin: 2rem 0;
+    max-width: 90vw;
+}
+
+.poetry2 h2{
+    text-align: left;
+    font-size: 2.5rem;
+}
+
+.poetry2 iframe{
+    width: 40rem;
+    height: 50rem;
+    max-width: 90vw;
+}
+
+.poetry2 p{
+    max-width: 40rem;
+}
+
 @media screen and (max-width: 768px) {
     .poetry1 summary{
         font-size: 1rem;
+    }
+
+    .poetry2 h2{
+        font-size: 2rem;
+    }
+
+    .poetry2 div img{
+        margin: 1rem 0;
+    }
+
+    .poetry2 iframe{
+        height: 30rem;
     }
 }
 
