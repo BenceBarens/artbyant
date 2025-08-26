@@ -413,8 +413,8 @@ footer{
 }
 
 .gallery h2{
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.6rem;
+    margin-bottom: 0.3rem;
 }
 
 .gallery article h2::before, .gallery article h2::after{
@@ -440,6 +440,7 @@ footer{
 
 .gallery article p{
     margin: .5rem;
+    font-size: 0.8rem;
 }
 
 .gallery-condensed{
@@ -448,13 +449,18 @@ footer{
     gap: 3rem;
 }
 
-.gallery-condensed a p{
+.gallery-condensed a div p{
     display: none;
 }
 
+.gallery-condensed a span{
+    font-size: 0.5rem;
+}
+
 .gallery-condensed a h2{
-    font-size: .6rem;
+    font-size: .4rem;
     max-width: 10rem;
+    margin-bottom: 0.1rem;
 }
 
 .gallery-condensed img{
@@ -498,7 +504,7 @@ footer{
     }
 
     .gallery h2{
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         margin-bottom: 0.2rem;
     }
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html><!-- Website Made by Bence (All rights reserved © 2018 Bence Barens) -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACTO ANTONI</title>
+    <link rel="stylesheet" href="../../style.css">
+
+    <link rel="icon" type="image/png" href="../../img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="../../img/favicon/favicon.svg">
+    <link rel="shortcut icon" href="../../img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../img/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Art by Ant">
+    <link rel="manifest" href="../../img/favicon/site.webmanifest">
+</head>
+<body id="contact">
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+    <header>
+        <nav>
+            <div>
+                <a href="../"><img src="../../img/logo.svg" alt="Logotipo de Antoni"></a>
+                <button id="menu-toggle" aria-label="Toggle menu">
+                    <img src="../../img/icons/menu1.svg" alt="">
+                    <img src="../../img/icons/menu2.svg" alt="">
+                    <img src="../../img/icons/menu3.svg" alt="">
+                </button>
+            </div>
+            <ul id="main-menu" aria-hidden="true">
+                <li><a href="../">Galería</a></li>
+                <li><a href="../exhibitions">Exposiciones</a></li>
+                <li><a href="../map">Mapa</a></li>
+                <li><a href="../poetry">Poesía</a></li>
+                <li><a href="../film">Cine</a></li>
+                <li><a href="../about">Acerca de</a></li>
+                <li><a href="" class="current">Contacto</a></li>
+                <li>
+                    <div class="language-switcher">
+                        <button onclick="switchLanguage('en')" id="lang-en"><img src="../../img/icons/english.svg" alt="Cambiar al inglés"></button>
+                        <button onclick="switchLanguage('es')" id="lang-es"><img src="../../img/icons/spanish.svg" alt="Cambiar al español"></button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+    <h1>Contacto</h1>
+
+        <form id="contactForm" action="https://formspree.io/f/xpwldker" method="POST">
+
+        <label>NOMBRE
+            <input type="text" name="name" placeholder="Bence Barens" required>
+        </label>
+
+        <label>CORREO ELECTRÓNICO
+            <input type="email" name="email" placeholder="hello@bencebarens.nl" required>
+        </label>
+
+        <label>NÚMERO DE TELÉFONO
+            <input type="tel" name="phone" placeholder="+1 (555) 123-4567">
+        </label>
+
+        <label>MENSAJE
+            <textarea name="message" placeholder="Hola Antoni, ..." required rows="5"></textarea>
+        </label>
+
+        <button type="submit">ENVIAR</button>
+    </form>
+
+    <p id="responseMessage" class="hidden">Gracias por tu mensaje.<br>Antoni se pondrá en contacto contigo lo antes posible.</p>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const form = this;
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+            form.style.display = "none";
+            document.getElementById("responseMessage").classList.remove("hidden");
+            } else {
+            alert("Parece que algo salió mal. Inténtalo de nuevo o envía un correo electrónico a Antoni directamente a contact@artbyant.gallery.");
+            }
+        }).catch(error => {
+            console.error("Error de envío:", error);
+            alert("El envío falló. Inténtalo de nuevo.");
+        });
+        });
+    </script>
+
+    </main>
+
+    <footer>
+        <ul>
+            <li>Instagram <a href="https://www.instagram.com/antoni_vdgeijn/" target="_blank">@antoni_vdgeijn</a></li>
+            <li>Correo electrónico <a href="mailto:contact@artbyant.nl?subject=Art%20by%20Ant&body=Hi%20Antoni%2C" target="_blank">contact@artbyant.nl</a></li>
+        </ul>
+        <ul>
+            <li>Todos los derechos reservados</li>
+            <li>© 2024-2025 Antoni van de Geijn</li>
+            <li>Marca y sitio web <a href="https://bencebarens.nl/en" target="_blank">Made by Bence</a></li>
+        </ul>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>
