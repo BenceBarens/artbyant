@@ -443,7 +443,7 @@ footer{
 }
 
 .gallery article img{
-    max-width: 15rem;
+    width: 100%;
     max-height: 30rem;
     display: block;
 }
@@ -456,7 +456,7 @@ footer{
 .gallery-condensed{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .gallery-condensed a div{
@@ -467,13 +467,8 @@ footer{
     font-size: 0.5rem;
 }
 
-/* .gallery-condensed a span{
-    font-size: 0.5rem;
-} */
-
 .gallery-condensed a h2{
     font-size: .4rem;
-    max-width: 10rem;
     margin-bottom: 0.1rem;
 }
 
@@ -563,7 +558,7 @@ footer{
     color: white;
 }
 
-#about main, #map main{
+#map main{
     margin: 8rem 5rem;
     display: flex;
     justify-content: center;
@@ -572,9 +567,23 @@ footer{
     gap: 2rem;
 }
 
+#about main{
+    margin: 8rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+#about main div{
+    display: flex;
+    flex-direction: column;
+}
+
 #about main img{
     width: 20rem;
-    margin: 2rem;
+    margin: 0.5rem;
     height: auto;
     max-width: 85vw;
 }
@@ -598,6 +607,11 @@ footer{
 
     #about h1, #about p{
         max-width: 85vw;
+    }
+
+    /* TEMP TYPE SHIT YAKNOW HOW IT IS BRUH -------------------------------------------------------------------------------------------- */
+    #about main div img{
+        display: none;
     }
 }
 
@@ -886,6 +900,20 @@ details[open] .exhibition-pictures{
         margin-top: 10rem;
         background: none;
     }
+}
+
+/* POETRY ----------------------------------------------------------------------------------- */
+
+#poetry .wrapper{
+    background-image: url('img/poetry_wrapper.jpg');
+    background-size: cover;
+    background-position:center;
+    background-attachment:initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;
+    margin-bottom: 5rem;
 }
 
 /* CONTACT ----------------------------------------------------------------------------------- */
