@@ -412,6 +412,11 @@ footer{
     text-decoration: none;
 }
 
+.gallery h2{
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
 .gallery article h2::before, .gallery article h2::after{
     content: '"';
     display: inline;
@@ -448,7 +453,7 @@ footer{
 }
 
 .gallery-condensed a h2{
-    font-size: .8rem;
+    font-size: .6rem;
     max-width: 10rem;
 }
 
@@ -493,7 +498,8 @@ footer{
     }
 
     .gallery h2{
-        font-size: 1.2rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.2rem;
     }
 
     .gallery article{
@@ -847,8 +853,4 @@ details[open] .exhibition-pictures{
     justify-content: center;
     text-align: center;
     flex-direction: column;
-}
-
-.language-switcher{
-    display: none;
 }
