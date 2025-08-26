@@ -1,4 +1,4 @@
-/* Website Made by Bence (All rights reserved © 2018 Bence Barens) */
+/* Website Made by Bence (All rights reserved © 2025 Bence Barens) */
 
 @import url('https://fonts.googleapis.com/css2?family=Castoro&family=Inter:opsz@14..32&display=swap');
 
@@ -288,7 +288,7 @@ nav ul a:hover, nav ul .current{
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    #gallery, #exhibitions{
+    #gallery, #exhibitions, #film{
         header img{
             filter: brightness(0) saturate(100%) invert(7%) sepia(6%) saturate(21%) hue-rotate(322deg) brightness(101%) contrast(90%);
         }
@@ -299,7 +299,7 @@ nav ul a:hover, nav ul .current{
         }
 
         .scrolled img{
-            filter: none !important;
+            filter: none;
         }
 
         header{
@@ -314,10 +314,20 @@ nav ul a:hover, nav ul .current{
         }
     }
 
-    #exhibitions{
+    #exhibitions, #film{
         header.nav-expanded {
             background-color: white;
             color: #1c1c1c;
+        }
+    }
+
+    #exhibitions, #film{
+        header{
+            color: white;
+        }
+
+        header img{
+            filter: none;
         }
     }
 
@@ -446,16 +456,20 @@ footer{
 .gallery-condensed{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 3rem;
+    gap: 2rem;
 }
 
-.gallery-condensed a div p{
-    display: none;
+.gallery-condensed a div{
+    margin-bottom: -0.5rem;
 }
 
-.gallery-condensed a span{
+.gallery-condensed a p{
     font-size: 0.5rem;
 }
+
+/* .gallery-condensed a span{
+    font-size: 0.5rem;
+} */
 
 .gallery-condensed a h2{
     font-size: .4rem;
@@ -513,6 +527,10 @@ footer{
         max-width: 15rem;
     }
 
+    .gallery-condensed adiv{
+        display: none;
+    }
+
     .gallery article img{
         max-width: 15rem;
         max-height: 25rem;
@@ -540,7 +558,7 @@ footer{
 
 /* ABOUT/MAP ----------------------------------------------------------------------------------- */
 
-#about, #map, #exhibitions{
+#about, #map, #exhibitions, #film{
     background-color: #1c1c1c;
     color: white;
 }
@@ -676,16 +694,18 @@ footer{
 /* EXHIBITIONS ----------------------------------------------------------------------------------- */
 
 #exhibitions .wrapper{
-    background-image: url('img/gallery_wrapper.jpg');
+    background-image: url('img/expositions_wrapper.jpg');
+    background-color: rgba(0,0,0,0.4);
+    background-blend-mode: darken;
     background-size: cover;
     background-position:center;
     background-attachment:initial;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 20rem;
+    height: 30rem;
     margin-bottom: 5rem;
-    color: #1c1c1c;
+    color: white;
 }
 
 .exhibition-timeline{
@@ -805,6 +825,66 @@ details[open] .exhibition-pictures{
 
     .exhibition-pictures{
         padding: 1rem;
+    }
+}
+
+/* FILM ----------------------------------------------------------------------------------- */
+
+#film .wrapper{
+    background-image: url('img/film_wrapper.jpg');
+    background-color: rgba(0,0,0,0.4);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position:center;
+    background-attachment:initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;
+    margin-bottom: 5rem;
+    color: white;
+}
+
+.film1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 8rem 5rem;
+}
+
+.film1 > div{
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.film1 p{
+    max-width: 40rem;
+}
+
+.film1 iframe{
+    border: none;
+    width: 40rem;
+    height: calc(40rem * 9 / 16);
+    max-width: 90vw;
+    max-height: calc(90vw * 9 / 16);
+}
+
+@media screen and (max-width: 768px) {
+    .film1 > div{
+        gap: 1rem;
+    }
+
+    .film1{
+        gap: 4rem;
+    }
+
+    #film .wrapper{
+        height: 1rem;
+        margin-top: 10rem;
+        background: none;
     }
 }
 
