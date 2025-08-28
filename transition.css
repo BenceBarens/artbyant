@@ -1,0 +1,30 @@
+/* transition.css */
+.transition-overlay {
+  position: fixed;
+  top: -50%;   /* schuif de hele animatie iets omhoog */
+  left: -80%;  /* schuif iets naar links */
+  width: 180%; /* maak groter zodat hij diagonaal altijd scherm dekt */
+  height: 150%;
+  pointer-events: none;
+  background: transparent;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.transition-overlay .stroke {
+  position: absolute;
+  width: 200%;
+  height: 40%;
+  background: url("img/brush.svg") repeat-x;
+  background-size: 100% calc(100% + 30rem);
+  transform: rotate(-10deg) translateX(-100%);
+}
+
+
+@keyframes strokeIn {
+  to { transform: rotate(-10deg) translateX(0%); }
+}
+
+@keyframes strokeOut {
+  to { transform: rotate(-10deg) translateX(100%); }
+}
