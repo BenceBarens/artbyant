@@ -15,7 +15,7 @@
   position: absolute;
   width: 200%;
   height: 40%;
-  background: url("img/brush.svg") repeat-x;
+  background: url("../img/brush.svg") repeat-x;
   background-size: 100% calc(100% + 30rem);
   transform: rotate(-10deg) translateX(-100%);
 }
