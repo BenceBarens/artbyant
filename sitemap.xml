@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+	<loc>https://artbyant.gallery/</loc>
+	<lastmod>2025-08-31T13:46:43+01:00</lastmod>
+	<priority>1.0</priority>
+	<xhtml:link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/es/</loc>
+	<lastmod>2025-08-31T13:46:43+01:00</lastmod>
+	<priority>0.8</priority>
+	<xhtml:link rel="alternate" hreflang="en" href="https://artbyant.gallery/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/map/</loc>
+	<lastmod>2025-08-31T13:46:45+01:00</lastmod>
+	<priority>0.8</priority>
+	<xhtml:link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/map/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/es/map/</loc>
+	<lastmod>2025-08-31T13:46:45+01:00</lastmod>
+	<priority>0.6</priority>
+	<xhtml:link rel="alternate" hreflang="en" href="https://artbyant.gallery/map/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/poetry/</loc>
+	<lastmod>2025-08-31T13:46:45+01:00</lastmod>
+	<priority>0.8</priority>
+	<xhtml:link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/poetry/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/es/poetry/</loc>
+	<lastmod>2025-08-31T13:46:45+01:00</lastmod>
+	<priority>0.6</priority>
+	<xhtml:link rel="alternate" hreflang="en" href="https://artbyant.gallery/poetry/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/film/</loc>
+	<lastmod>2025-08-31T13:46:45+01:00</lastmod>
+	<priority>0.8</priority>
+	<xhtml:link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/film/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/es/film/</loc>
+	<lastmod>2025-08-31T13:46:45+01:00</lastmod>
+	<priority>0.6</priority>
+	<xhtml:link rel="alternate" hreflang="en" href="https://artbyant.gallery/film/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/about/</loc>
+	<lastmod>2025-08-31T13:46:45+01:00</lastmod>
+	<priority>0.8</priority>
+	<xhtml:link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/about/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/es/about/</loc>
+	<lastmod>2025-08-31T13:46:46+01:00</lastmod>
+	<priority>0.6</priority>
+	<xhtml:link rel="alternate" hreflang="en" href="https://artbyant.gallery/about/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/contact/</loc>
+	<lastmod>2025-08-31T13:46:46+01:00</lastmod>
+	<priority>0.8</priority>
+	<xhtml:link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/contact/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/es/contact/</loc>
+	<lastmod>2025-08-31T13:46:46+01:00</lastmod>
+	<priority>0.6</priority>
+	<xhtml:link rel="alternate" hreflang="en" href="https://artbyant.gallery/contact/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/exhibitions/</loc>
+	<lastmod>2025-08-31T13:46:46+01:00</lastmod>
+	<priority>0.8</priority>
+	<xhtml:link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/exhibitions/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/es/exhibitions/</loc>
+	<lastmod>2025-08-31T13:46:46+01:00</lastmod>
+	<priority>0.6</priority>
+	<xhtml:link rel="alternate" hreflang="en" href="https://artbyant.gallery/exhibitions/" />
+</url>
+</urlset>
