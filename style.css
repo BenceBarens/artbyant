@@ -100,6 +100,7 @@ span{
     margin-right: .5rem;
     padding: .2rem .5rem;
     border-radius: 10rem;
+    white-space: nowrap;
 }
 
 button{
@@ -349,11 +350,24 @@ footer{
     text-transform: uppercase;
     color: white;
     padding: 2rem 4rem;
-    border-top: #e4cb16 0.5rem solid;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     gap: 5rem;
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+    background-image: url('img/icons/border.svg');
+    background-size: 10rem 0.5rem;
+    background-repeat: repeat-x;
 }
 
 @media only screen and (max-width: 768px) {
@@ -596,6 +610,22 @@ footer{
     text-align: justify;
 }
 
+#about main div a{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+#about main div a:hover{
+    color: #e4cb16;
+}
+
+#about main a img{
+    width: 1rem;
+}
+
 #henk{
     display: none !important;
 }
@@ -749,6 +779,7 @@ footer{
 
 .exhibition-timeline summary{
     list-style-position: outside;
+    cursor: pointer;
 }
 
 .exhibition-timeline summary div{
@@ -904,9 +935,7 @@ details[open] .exhibition-pictures{
     }
 
     #film .wrapper{
-        height: 1rem;
-        margin-top: 10rem;
-        background: none;
+        background-position: right;
     }
 }
 
