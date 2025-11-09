@@ -1,6 +1,20 @@
 /* Website Made by Bence (All rights reserved © 2025 Bence Barens) */
 
-@import url('https://fonts.googleapis.com/css2?family=Castoro&family=Inter:opsz@14..32&display=swap');
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter.ttf) format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Castoro';
+    src: url(fonts/Castoro.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 *{
     scroll-behavior: smooth;
@@ -113,16 +127,6 @@ button{
 
 /* HEADER ------------------------------------------------------------------------------------ */
 
-header{
-    background-color: rgba(28, 28, 28, 1);
-    color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    transition: all 500ms ease;
-}
-
 header img{
     width: 3rem;
 }
@@ -159,12 +163,82 @@ nav ul a:hover, nav ul .current{
     font-weight: 700;
 }
 
+.language-switcher .selected{
+    border: #e4cb16 0.2rem solid;
+    transition: none;
+}
+
+.language-switcher button{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .4rem;
+    overflow: hidden;
+}
+
+.language-switcher{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0 1rem;
+}
+
+header {
+    background-color: rgba(28, 28, 28, 0.8);
+    backdrop-filter: blur(0.5rem);
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transition: all 500ms ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    header{
+        background-color: rgba(28,28,28,0);
+        backdrop-filter: none;
+    }
+
+    .scrolled {
+        background-color: rgba(28, 28, 28, 0.8) !important;
+        color: white !important;
+        backdrop-filter: blur(0.5rem);
+    }
+
+    .hide-header{
+        transform: translateY(-100%);
+    }
+
+    @media only screen and (min-width: 768px) {
+        
+        /* for white pages without header */
+        #contact, #body404{
+            header{
+                background-color: white;
+                color:#1c1c1c;
+            }
+        }
+
+        /* for pages with lighter headers */
+        #gallery{
+            header{
+                color: #1c1c1c;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 768px) {
+
     header nav{
         align-items: flex-start;
         flex-direction: column;
         padding: .5rem;
-        margin-bottom: -.5rem;
+        margin-bottom: -1rem;
     }
 
     header nav>div{
@@ -196,35 +270,22 @@ nav ul a:hover, nav ul .current{
         position: static;
     }
 
-    header.nav-expanded #menu-toggle img:nth-child(2){
-        opacity: 0;
-    }
+    /* header icon */
+    header.nav-expanded #menu-toggle img:nth-child(2){ opacity: 0; }
+    header.nav-expanded #menu-toggle img:nth-child(1){ transform: rotate(45deg); }
+    header.nav-expanded #menu-toggle img:nth-child(3){ transform: rotate(-45deg); margin-top: -1.2rem; }
 
-    header.nav-expanded #menu-toggle img:nth-child(1){
-        transform: rotate(45deg);
-    }
-    header.nav-expanded #menu-toggle img:nth-child(3){
-        transform: rotate(-45deg);
-        margin-top: -1.2rem;
-    }
-
-    #gallery header.nav-expanded,
-    #body404 header.nav-expanded,
-    #contact header.nav-expanded{
-        background-color: #1c1c1c;
-        color: white;
-    }
-    
     header.nav-expanded{
-        background-color: white;
-        color: #1c1c1c;
-        padding-bottom: 2rem;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
+        background-color: #1c1c1c !important;
+        border-bottom: 0.2rem solid #e4cb16;
+        transform: translateY(0);
     }
 
-    header.nav-expanded.hide-header{
-        transform: translateY(0);
+    header.nav-expanded nav{
+        height: auto;
+        margin-bottom: 1rem;
     }
 
     header.nav-expanded nav ul{
@@ -232,10 +293,6 @@ nav ul a:hover, nav ul .current{
         pointer-events: all;
         max-height: 20rem;
         margin-right: 0.5rem;
-    }
-
-    header.nav-expanded nav{
-        height: auto;
     }
 
     header nav ul{
@@ -260,80 +317,9 @@ nav ul a:hover, nav ul .current{
     }
 
     .language-switcher{
-        padding-top: 2rem;
+        margin-top: 1rem;
         align-items: flex-end;
-    }
-}
-
-.language-switcher .selected{
-    border: #e4cb16 0.2rem solid;
-    transition: none;
-}
-
-.language-switcher button{
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: .4rem;
-    overflow: hidden;
-}
-
-.language-switcher{
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    margin: 0 1rem;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    #gallery, #exhibitions, #film{
-        header img{
-            filter: brightness(0) saturate(100%) invert(7%) sepia(6%) saturate(21%) hue-rotate(322deg) brightness(101%) contrast(90%);
-        }
-
-        .scrolled{
-            background-color: rgba(28, 28, 28, 1);
-            color: white;
-        }
-
-        .scrolled img{
-            filter: none;
-        }
-
-        header{
-            background-color: rgba(28, 28, 28, 0);
-            color: #1c1c1c;
-        }
-    }
-
-    #gallery{
-        header.nav-expanded img{
-            filter: none !important;
-        }
-    }
-
-    #exhibitions, #film{
-        header.nav-expanded {
-            background-color: white;
-            color: #1c1c1c;
-        }
-    }
-
-    #exhibitions, #film{
-        header{
-            color: white;
-        }
-
-        header img{
-            filter: none;
-        }
-    }
-
-    .hide-header {
-        transform: translateY(-100%);
+        margin-right: -1rem;
     }
 }
 
@@ -380,6 +366,14 @@ footer::before {
 }
 
 /* GALLERY ----------------------------------------------------------------------------------- */
+
+#gallery header img{
+    filter: brightness(0);
+}
+
+#gallery .scrolled img, #gallery .nav-expanded img{
+    filter: none;
+}
 
 #gallery .wrapper{
     background-image: url('img/gallery_wrapper.jpg');
@@ -813,11 +807,9 @@ footer::before {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    align-items: start;
     transition: all 0.4s ease;
     overflow: hidden;
-    max-height: 0;
-    opacity: 0;
+    max-height: 0px;
 }
 
 .exhibition-pictures img{
@@ -827,7 +819,6 @@ footer::before {
 
 details[open] .exhibition-pictures{
     max-height: 50rem;
-    opacity: 1;
 }
 
 @media screen and (max-width: 768px) {
@@ -943,8 +934,8 @@ details[open] .exhibition-pictures{
 
 #poetry .wrapper{
     background-image: url('img/poetry_wrapper.jpg');
-    background-color: rgba(255, 255, 255,0.2);
-    background-blend-mode: lighten;
+    background-color: rgba(0,0,0,0.3);
+    background-blend-mode: darken;
     background-size: cover;
     background-position:center;
     background-attachment:initial;
@@ -953,7 +944,6 @@ details[open] .exhibition-pictures{
     justify-content: center;
     height: 30rem;
     margin-bottom: 5rem;
-    color: #1c1c1c;
 }
 
 .poetry1{
