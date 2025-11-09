@@ -13,12 +13,18 @@ if (window.scrollY > 100) {
 let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
-if (window.scrollY > lastScrollY) {
-    header.classList.add('hide-header');
-} else {
-    header.classList.remove('hide-header');
-}
-lastScrollY = window.scrollY;
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > 50) {
+        if (currentScrollY > lastScrollY) {
+            header.classList.add('hide-header');
+        } else {
+            header.classList.remove('hide-header');
+        }
+    } else {
+        header.classList.remove('hide-header');
+    }
+
+    lastScrollY = currentScrollY;
 });
 
 const menuButton = document.querySelector('#menu-toggle');
