@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: */icons/*
 Disallow: */favicon/*
-Disallow: */text/*
+Disallow: */test/*
+Disallow: */404.html
 
 Sitemap: https://artbyant.gallery/sitemap.xml
