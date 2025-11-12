@@ -224,10 +224,21 @@ header {
         }
 
         /* for pages with lighter headers */
-        #gallery{
+        #gallery, #poetry{
             header{
                 color: #1c1c1c;
             }
+        }
+    }
+
+    /* for pages with lighter headers */
+    #gallery, #poetry{
+        header img{
+            filter: brightness(0);
+        }
+
+        .scrolled img, .nav-expanded img{
+            filter: none;
         }
     }
 }
@@ -366,14 +377,6 @@ footer::before {
 }
 
 /* GALLERY ----------------------------------------------------------------------------------- */
-
-#gallery header img{
-    filter: brightness(0);
-}
-
-#gallery .scrolled img, #gallery .nav-expanded img{
-    filter: none;
-}
 
 #gallery .wrapper{
     background-image: url('img/gallery_wrapper.jpg');
@@ -874,7 +877,7 @@ details[open] .exhibition-pictures{
 /* FILM ----------------------------------------------------------------------------------- */
 
 #film .wrapper{
-    background-image: url('img/film_wrapper.jpg');
+    background-image: url('img/film_wrapper2.jpg');
     background-color: rgba(0,0,0,0.4);
     background-blend-mode: darken;
     background-size: cover;
@@ -924,26 +927,21 @@ details[open] .exhibition-pictures{
     .film1{
         gap: 4rem;
     }
-
-    #film .wrapper{
-        background-position: right;
-    }
 }
 
 /* POETRY ----------------------------------------------------------------------------------- */
 
 #poetry .wrapper{
-    background-image: url('img/poetry_wrapper.jpg');
-    background-color: rgba(0,0,0,0.3);
-    background-blend-mode: darken;
+    background-image: url('img/poetry-wrapper2.jpg');
     background-size: cover;
-    background-position:center;
+    background-position:left;
     background-attachment:initial;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 30rem;
     margin-bottom: 5rem;
+    color: #1c1c1c;
 }
 
 .poetry1{
@@ -1000,6 +998,16 @@ details[open] .exhibition-pictures{
 }
 
 @media screen and (max-width: 768px) {
+    #poetry .wrapper{
+        background-color: rgba(0,0,0,0.3);
+        background-blend-mode: darken;
+    }
+
+    #poetry h1{
+        margin-top: 25rem;
+        color: white;
+    }
+
     .poetry1 summary{
         font-size: 1rem;
     }
