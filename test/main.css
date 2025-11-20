@@ -1,61 +1,9 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background: #222;
-  font-size: 16px;
+    margin: 0;
+    overflow: hidden;
+    background-color: #1c1c1c;
 }
 
-.globe-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-}
-
-.globe {
-  position: relative;
-  width: 20em;
-  height: 20em;
-  border-radius: 50%;
-  background: url('earth.jpg') no-repeat center/cover;
-  transform-style: preserve-3d;
-  perspective: 800px;
-  transition: transform 1s ease;
-}
-
-.marker {
-  position: absolute;
-  width: var(--size, 2em);
-  height: var(--size, 2em);
-  top: 50%;
-  left: 50%;
-  transform-origin: center center;
-  transform: rotateX(calc(var(--lat) * 1deg)) rotateY(calc(var(--lon) * 1deg)) translateZ(10em);
-  transition: transform 1s ease;
-}
-
-.controls {
-  display: flex;
-  gap: 2em;
-  margin-top: 15rem;
-}
-
-.controls button {
-  background: none;
-  border: 2px solid #fff;
-  color: #fff;
-  font-size: 1.5em;
-  border-radius: 50%;
-  width: 2em;
-  height: 2em;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.controls button:hover {
-  background: #fff;
-  color: #222;
+canvas {
+    display: block;
 }
