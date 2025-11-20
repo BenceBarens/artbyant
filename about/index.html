@@ -64,7 +64,7 @@
         </div>
         <div>
             <h1>Antoni van de Geijn</h1>
-            <p>Antoni van de Geijn is a 20-year-old visionary artist based in Madrid. His work moves beyond traditional painting, becoming an act of worldbuilding through art.</p>
+            <p>Antoni van de Geijn is a <span id="age">20</span>-year-old visionary artist based in Madrid. His work moves beyond traditional painting, becoming an act of worldbuilding through art.</p>
             <p>At the core of his practice is The Visual Universe, a cinematic and interconnected body of work that transforms painting into storytelling. Fascinated by worldbuilding, Antoni does not replicate the visible world; instead, he turns inward, creating abstract and imagined realities that explore emotion, memory, and untold narratives. Each canvas is a scene within this expanding universe, where characters reappear, cross over, and interact across works in a layered and unfolding timeline.</p>
             <p>His worlds are alive, evolving organically and deepening the sense of immersion with every new piece. To build them, Antoni experiments with unconventional tools such as protractors, cardboard, and spatulas, crafting tactile and textured surfaces that merge abstraction with narrative.</p>
             <p>Influenced by filmmaking and poetry, he composes his work with cinematic rhythm and poetic resonance, blending visual storytelling with emotional depth. Through Art by Ant, he has created a multidisciplinary space where painting, film, and poetry converge.</p>
@@ -89,5 +89,8 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('age').textContent = new Date().getFullYear() - 2005 - (new Date() < new Date(new Date().getFullYear(), 9, 13) ? 1 : 0);
+    </script>
 </body>
 </html>

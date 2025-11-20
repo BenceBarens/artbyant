@@ -106,7 +106,7 @@ ul{
     margin: 0;
 }
 
-span{
+.gallery span{
     background-color: #e4cb16;
     text-transform: uppercase;
     text-align: left;
@@ -604,7 +604,6 @@ footer::before {
 
 #about p, #map p{
     max-width: 40rem;
-    text-align: justify;
 }
 
 #about main div a{
@@ -902,21 +901,23 @@ details[open] .exhibition-pictures{
 
 .film1 > div{
     display: flex;
-    gap: 3rem;
-    flex-wrap: wrap;
     justify-content: center;
+    max-width: 80rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
-.film1 p{
-    max-width: 35rem;
+.film1 > div > div{
+    flex: 1 1 20rem;
 }
 
 .film1 iframe{
+    width: 35rem;
+    flex: 0 1 35rem;
+    max-width: 100%;
+    aspect-ratio: 16/9;
     border: none;
-    width: 40rem;
-    height: calc(40rem * 9 / 16);
-    max-width: 90vw;
-    max-height: calc(90vw * 9 / 16);
 }
 
 @media screen and (max-width: 768px) {
@@ -926,6 +927,7 @@ details[open] .exhibition-pictures{
 
     .film1{
         gap: 4rem;
+        margin: 2rem;
     }
 }
 
