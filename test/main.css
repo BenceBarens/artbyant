@@ -2,8 +2,11 @@ body {
     margin: 0;
     overflow: hidden;
     background-color: #1c1c1c;
+    text-align: center;
 }
 
-canvas {
-    display: block;
+#globe-container{
+    width: 800px;
+    height: 800px;
+    margin: auto;
 }
