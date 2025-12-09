@@ -6,7 +6,7 @@ body {
 }
 
 #globe-container{
-    width: 800px;
-    height: 800px;
-    margin: auto;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
 }

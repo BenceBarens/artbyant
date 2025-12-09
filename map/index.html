@@ -56,60 +56,64 @@
     </header>
 
     <main id="main">
+        <h1>Visual universe</h1>
+        <p>Antoni is an artist who transcends traditional abstract painting by creating The Visual Universe - a cinematic world brought to life through art. Rather than producing standalone works, Antoni's paintings function as interconnected scenes from a vast, fictive universe, much like a cinematic universe in film. Each piece is a glimpse into this unfolding reality, capturing moments, atmospheres, and fragments of a larger narrative that exists beyond the frame.</p>
         <div>
-            <h1>Visual universe</h1>
-            <p>Antoni is an artist who transcends traditional abstract painting by creating The Visual Universe - a cinematic world brought to life through art. Rather than producing standalone works, Antoni's paintings function as interconnected scenes from a vast, fictive universe, much like a cinematic universe in film. Each piece is a glimpse into this unfolding reality, capturing moments, atmospheres, and fragments of a larger narrative that exists beyond the frame.</p>
-            <p id="map-hover-instruction">Hover over any part of the map with your cursor to discover the world inside.</p>
-            <div class="popup hidden" id="sytre">
-                <img src="../img/art/compressed/1.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/11.webp" alt="" class="popup-img">
-            </div>
-            <div class="popup hidden" id="united-republic-of-ember">
-                <img src="../img/art/compressed/3.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/10.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/17.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/19.webp" alt="" class="popup-img">
-            </div>
-            <div class="popup hidden" id="citle">
-                <img src="../img/art/compressed/7.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/12.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/14.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/15.webp" alt="" class="popup-img">
-            </div>
-            <div class="popup hidden" id="yabude">
-                <img src="../img/art/compressed/5.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/13.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/21.webp" alt="" class="popup-img">
-            </div>
-            <div class="popup hidden" id="dragons-tail">
-                <img src="../img/art/compressed/22.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/2.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/4.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/24.webp" alt="" class="popup-img">
-            </div>
-            <div class="popup hidden" id="southern-jaw">
-                <img src="../img/art/compressed/6.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/9.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/16.webp" alt="" class="popup-img">
-            </div>
-            <div class="popup hidden" id="barren-lands">
-                <img src="../img/art/compressed/23.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/18.webp" alt="" class="popup-img">
-                <img src="../img/art/compressed/20.webp" alt="" class="popup-img">
-            </div>
+            <nav>
+                <button id="prev">Previous</button>
+                <button id="next">Next</button>
+            </nav>
+            <progress id="carouselProgress" value="1" max="7"></progress>
+            <ul id="popup-container">
+                <li class="popup" id="popup0" aria-hidden="true">
+                    <h2>Sytre</h2>
+                    <img src="../img/art/compressed/1.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/11.webp" alt="" class="popup-img">
+                </li>
+                <li class="popup" id="popup1" aria-hidden="true">
+                    <h2>The United Republic (U.R.) of Ember</h2>
+                    <img src="../img/art/compressed/3.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/10.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/17.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/19.webp" alt="" class="popup-img">
+                </li>
+                <li class="popup" id="popup2" aria-hidden="true">
+                    <h2>Citle</h2>
+                    <img src="../img/art/compressed/7.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/12.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/14.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/15.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/25.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/26.webp" alt="" class="popup-img">
+                </li>
+                <li class="popup" id="popup3" aria-hidden="true">
+                    <h2>Yabude</h2>
+                    <img src="../img/art/compressed/5.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/13.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/21.webp" alt="" class="popup-img">
+                </li>
+                <li class="popup" id="popup4" aria-hidden="true">
+                    <h2>Dragon's tail</h2>
+                    <img src="../img/art/compressed/22.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/2.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/4.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/24.webp" alt="" class="popup-img">
+                </li>
+                <li class="popup" id="popup5" aria-hidden="true">
+                    <h2>The Southern Jaw</h2>
+                    <img src="../img/art/compressed/6.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/9.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/16.webp" alt="" class="popup-img">
+                </li>
+                <li class="popup" id="popup6" aria-hidden="true">
+                    <h2>The Barren Lands</h2>
+                    <img src="../img/art/compressed/23.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/18.webp" alt="" class="popup-img">
+                    <img src="../img/art/compressed/20.webp" alt="" class="popup-img">
+                </li>
+            </ul>
         </div>
-        <div id="universe">
-            <div id="map1" class="hover-target" data-tooltip="Sytre" aria-label="Sytre" tabindex="0"></div>
-            <div id="map2" class="hover-target" data-tooltip="The United Republic of Ember" aria-label="The United Republic of Ember" tabindex="0"></div>
-            <div id="map3" class="hover-target" data-tooltip="Citle" aria-label="Citle" tabindex="0"></div>
-            <div id="map4" class="hover-target" data-tooltip="Citle" aria-label="Citle" tabindex="0"></div>
-            <div id="map5" class="hover-target" data-tooltip="Yabude" aria-label="Yabude" tabindex="0"></div>
-            <div id="map6" class="hover-target" data-tooltip="Dragon's tail" aria-label="Dragon's tail" tabindex="0"></div>
-            <div id="map7" class="hover-target" data-tooltip="Dragon's tail" aria-label="Dragon's tail" tabindex="0"></div>
-            <div id="map8" class="hover-target" data-tooltip="The Southern Jaw" aria-label="The Southern Jaw" tabindex="0"></div>
-            <div id="map9" class="hover-target" data-tooltip="The Barren Lands" aria-label="The Barren Lands" tabindex="0"></div>
-            <div id="tooltip"></div>
-        </div>
+        <div id="globe-container"></div>
     </main>
 
     <footer>
@@ -125,6 +129,7 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
     <script src="../js/map.js"></script>
 </body>
 </html>

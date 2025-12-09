@@ -7,26 +7,24 @@ container.appendChild(renderer.domElement);
 
 function degToRad(deg) { return deg * Math.PI / 180; }
 
-// Combineer stickers in één texture zonder kleurverlies
 function createCombinedTexture(files, positions, scales) {
     const canvas = document.createElement('canvas');
     canvas.width = 1024;
     canvas.height = 1024;
     const ctx = canvas.getContext('2d');
 
-    // Gradient achtergrond
     const gradient = ctx.createRadialGradient(
         canvas.width/2, canvas.height/2, 0,
         canvas.width/2, canvas.height/2, canvas.width/2
     );
-    gradient.addColorStop(0, '#020205'); 
+    gradient.addColorStop(0, '#0e141fff'); 
     gradient.addColorStop(1, '#010408');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const promises = files.map(file => new Promise(resolve => {
         const img = new Image();
-        img.crossOrigin = 'anonymous'; // belangrijk om saturatie te behouden
+        img.crossOrigin = 'anonymous';
         img.src = file;
         img.onload = () => resolve(img);
     }));
@@ -40,7 +38,7 @@ function createCombinedTexture(files, positions, scales) {
             ctx.drawImage(img, pos.x - w/2, pos.y - h/2, w, h);
         });
         const texture = new THREE.CanvasTexture(canvas);
-        texture.encoding = THREE.sRGBEncoding; // behoud kleuren/saturatie
+        texture.encoding = THREE.sRGBEncoding;
         return texture;
     });
 }
@@ -55,10 +53,10 @@ const positions = [
     { x: 700, y: 900 }
 ];
 
-const scales = [0.6, 0.3, 0.2, 0.2, 0.3, 0.25, 0.4];
+const scales = [0.55, 0.25, 0.18, 0.18, 0.25, 0.2, 0.4];
 
 createCombinedTexture(
-    ['1.webp','2.webp','3.webp','4.webp','5.webp','6.webp','7.webp'],
+    ['../../img/map/1.webp','../../img/map/2.webp','../../img/map/3.webp','../../img/map/4.webp','../../img/map/5.webp','../../img/map/6.webp','../../img/map/7.webp'],
     positions,
     scales
 ).then(texture => {
@@ -110,19 +108,50 @@ createCombinedTexture(
     }
     smoothRotate();
 
+    function showPopup(currentIndex){
+        const items = document.querySelectorAll('.popup')
+        items.forEach((el, i) => {
+            const hidden = i !== currentIndex
+            el.setAttribute('aria-hidden', hidden)
+        })
+    }
+
+    function updateProgress() {
+        const progress = document.getElementById('carouselProgress');
+        progress.value = currentIndex + 1;
+    }
+
     document.getElementById('next').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % angles.length;
-        updateTargets(currentIndex);
-    });
+        currentIndex = (currentIndex + 1) % angles.length
+        updateTargets(currentIndex)
+        showPopup(currentIndex)
+        updateProgress()
+    })
 
     document.getElementById('prev').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + angles.length) % angles.length;
-        updateTargets(currentIndex);
-    });
+        currentIndex = (currentIndex - 1 + angles.length) % angles.length
+        updateTargets(currentIndex)
+        showPopup(currentIndex)
+        updateProgress()
+    })
+
+    function fitGlobeToCanvas() {
+        const radius = 5;
+        const fov = camera.fov * Math.PI / 180;
+        const height = container.clientHeight;
+        const dist = radius / Math.sin(fov / 2);
+        camera.position.z = dist;
+    }
+
+    fitGlobeToCanvas();
 
     window.addEventListener('resize', () => {
         renderer.setSize(container.clientWidth, container.clientHeight);
         camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
+        fitGlobeToCanvas();
     });
+
+    showPopup(currentIndex);
+    updateProgress();
 });
