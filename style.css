@@ -16,6 +16,12 @@
     font-display: swap;
 }
 
+:root{
+    --color-primary: #1c1c1c;
+    --color-secondary: white;
+    --color-accent: #e4cb16;
+}
+
 *{
     scroll-behavior: smooth;
     transition: all 200ms ease;
@@ -54,8 +60,8 @@ a{
 }
 
 ::selection {
-    background: #e4cb16;
-    color: #1c1c1c;
+    background: var(--color-accent);
+    color: var(--color-primary);
 }
 
 .skip-link {
@@ -63,8 +69,8 @@ a{
   top: -20rem;
   left: 50%;
   transform: translateX(-50%);
-  background: #e4cb16;
-  color: #1c1c1c;
+  background: var(--color-accent);
+  color: var(--color-primary);
   padding: 0.5rem 1rem;
   z-index: 1000;
   text-decoration: none;
@@ -88,7 +94,7 @@ a{
 
 @media (prefers-reduced-motion: no-preference) {
     main {
-        animation: fadeIn 1s ease;
+        animation: fadeIn 1s ease forwards;
     }
 }
 
@@ -103,7 +109,7 @@ ul{
 }
 
 .gallery span{
-    background-color: #e4cb16;
+    background-color: var(--color-accent);
     text-transform: uppercase;
     text-align: left;
     font-size: smaller;
@@ -147,12 +153,12 @@ nav ul{
 nav ul a{
     padding: 1.5rem 1rem;
     display: block;
-    box-shadow:0 0 0 0rem #e4cb16 inset;
+    box-shadow:0 0 0 0rem var(--color-accent) inset;
     text-decoration: none;
 }
 
 nav ul a:hover, nav ul .current{
-    box-shadow: 0 -1rem 0rem -0.5rem #e4cb16 inset;
+    box-shadow: 0 -1rem 0rem -0.5rem var(--color-accent) inset;
 }
 
 .current{
@@ -160,7 +166,7 @@ nav ul a:hover, nav ul .current{
 }
 
 .language-switcher .selected{
-    border: #e4cb16 0.2rem solid;
+    border: var(--color-accent) 0.2rem solid;
     transition: none;
 }
 
@@ -185,7 +191,7 @@ nav ul a:hover, nav ul .current{
 header {
     background-color: rgba(28, 28, 28, 0.8);
     backdrop-filter: blur(0.5rem);
-    color: white;
+    color: var(--color-secondary);
     position: fixed;
     top: 0;
     width: 100%;
@@ -212,14 +218,14 @@ header {
     @media only screen and (min-width: 768px) {
         
         /* for white pages without header */
-        #contact header, #body404 header{
-            background-color: white;
-            color:#1c1c1c;
+        #body404 header{
+            background-color: var(--color-secondary);
+            color:var(--color-primary);
         }
 
         /* for pages with lighter headers */
         #gallery header, #poetry header{
-            color: #1c1c1c;
+            color: var(--color-primary);
         }
     }
 
@@ -281,8 +287,8 @@ header {
     header.nav-expanded{
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
-        background-color: #1c1c1c !important;
-        border-bottom: 0.2rem solid #e4cb16;
+        background-color: var(--color-primary) !important;
+        border-bottom: 0.2rem solid var(--color-accent);
         transform: translateY(0);
     }
 
@@ -311,7 +317,7 @@ header {
     }
 
     header nav ul .current{
-        border-right: #e4cb16 0.5rem solid;
+        border-right: var(--color-accent) 0.5rem solid;
         box-shadow: none;
     }
 
@@ -334,10 +340,10 @@ header {
 /* FOOTER ------------------------------------------------------------------------------------ */
 
 footer{
-    background-color: #1c1c1c;
+    background-color: var(--color-primary);
     margin-top: 5rem;
     text-transform: uppercase;
-    color: white;
+    color: var(--color-secondary);
     padding: 2rem 4rem;
     align-items: center;
     display: flex;
@@ -399,7 +405,7 @@ footer::before {
 #gallery2 a{
     text-decoration: none;
     padding: 1rem 2rem;
-    background-color: #e4cb16;
+    background-color: var(--color-accent);
     border-radius: 10rem;
     text-transform: uppercase;
 }
@@ -497,7 +503,7 @@ footer::before {
 }
 
 #view-toggle button.active{
-    background-color: #e4cb16;
+    background-color: var(--color-accent);
 }
 
 #view-toggle button img{
@@ -554,9 +560,9 @@ footer::before {
     }
 }
 
-#about, #map, #exhibitions, #film, #poetry{
-    background-color: #1c1c1c;
-    color: white;
+#about, #map, #exhibitions, #film, #poetry, #contact{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 /* ABOUT------------------------------------------------------------------------------------------- */
@@ -599,7 +605,7 @@ footer::before {
 }
 
 #about main div a:hover{
-    color: #e4cb16;
+    color: var(--color-accent);
 }
 
 #about main a img{
@@ -660,8 +666,8 @@ footer::before {
 
 #map main div:first-of-type {
     margin-top: 3rem;
-    background-color: white;
-    color: #1c1c1c;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
     border-radius: 1rem;
     overflow: hidden;
     padding: 0;
@@ -669,6 +675,7 @@ footer::before {
 
 #map progress {
     -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     height: 0.5rem;
     display: flex;
@@ -681,12 +688,12 @@ footer::before {
 }
 
 #map progress::-webkit-progress-value {
-    background: #e4cb16;
+    background: var(--color-accent);
     transition: width 0.4s ease;
 }
 
 #map progress::-moz-progress-bar {
-    background: #e4cb16;
+    background: var(--color-accent);
     transition: width 0.4s ease;
 }
 
@@ -699,8 +706,8 @@ footer::before {
 }
 
 #map main nav button{
-    background-color: #1c1c1c;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
     border-radius: 50rem;
     padding: 0.5rem 1rem;
 }
@@ -765,7 +772,7 @@ footer::before {
     justify-content: center;
     height: 30rem;
     margin-bottom: 5rem;
-    color: white;
+    color: var(--color-secondary);
 }
 
 .exhibition-timeline{
@@ -776,7 +783,7 @@ footer::before {
 }
 
 .exhibition-timeline > div{
-    border-left: 0.5rem solid #e4cb16;
+    border-left: 0.5rem solid var(--color-accent);
     padding-bottom: 3rem;
 }
 
@@ -807,7 +814,7 @@ footer::before {
 .exhibition-timeline summary img{
     width: 5rem;
     height: 5rem;
-    border: 0.5rem solid #e4cb16;
+    border: 0.5rem solid var(--color-accent);
     border-radius: 50rem;
     position: absolute;
     transform: translateX(-50%);
@@ -822,18 +829,12 @@ footer::before {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    transition: all 0.4s ease;
     overflow: hidden;
-    max-height: 0px;
 }
 
 .exhibition-pictures img{
     width: 10rem;
     object-fit: contain;
-}
-
-details[open] .exhibition-pictures{
-    max-height: 50rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -851,7 +852,7 @@ details[open] .exhibition-pictures{
     .exhibition-timeline summary img {
         width: 2rem;
         height: 2rem;
-        border: 0.3rem solid #e4cb16;
+        border: 0.3rem solid var(--color-accent);
         margin-left: -2.75rem;
     }
 
@@ -873,7 +874,7 @@ details[open] .exhibition-pictures{
     }
 
     .exhibition-timeline > div{
-        border-left: 0.3rem solid #e4cb16;
+        border-left: 0.3rem solid var(--color-accent);
         padding-bottom: 1rem;
     }
 
@@ -900,7 +901,7 @@ details[open] .exhibition-pictures{
     justify-content: center;
     height: 30rem;
     margin-bottom: 5rem;
-    color: white;
+    color: var(--color-secondary);
 }
 
 .film1{
@@ -956,7 +957,7 @@ details[open] .exhibition-pictures{
     justify-content: center;
     height: 30rem;
     margin-bottom: 5rem;
-    color: #1c1c1c;
+    color: var(--color-primary);
 }
 
 .poetry1{
@@ -1020,7 +1021,7 @@ details[open] .exhibition-pictures{
 
     #poetry h1{
         margin-top: 25rem;
-        color: white;
+        color: var(--color-secondary);
     }
 
     .poetry1 summary{
@@ -1067,16 +1068,20 @@ details[open] .exhibition-pictures{
 #contact form input, #contact form textarea{
     font-size: large;
     border: none;
-    border-bottom: #e4cb16 solid 0.2rem;
+    border-bottom: var(--color-accent) solid 0.2rem;
     padding: 0.5rem;
+    background: none;
+    color: var(--color-secondary);
 }
 
 #contact form input:focus, #contact form textarea:focus{
-    border-bottom: #1c1c1c solid 0.2rem;
+    border-bottom: var(--color-secondary) solid 0.2rem;
+    outline: none;
 }
 
 #contact form button{
-    background-color: #e4cb16;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
     width: fit-content;
     padding: 0.5rem 1rem;
     border-radius: 10rem;
