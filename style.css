@@ -992,6 +992,16 @@ footer::before {
     padding: 1rem;
 }
 
+.poetry2 a img{
+    width: 6rem !important;
+    transform: rotate(5deg);
+}
+
+.poetry2 a img:hover{
+    width: 6rem !important;
+    transform: rotate(-5deg);
+}
+
 .poetry2 div img{
     width: 30rem;
     margin: 2rem 0;
