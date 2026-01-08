@@ -913,6 +913,17 @@ footer::before {
     margin: 8rem 5rem;
 }
 
+.film1 .gallery-wrapper{
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.film1 .glightbox img{
+    width: 10rem;
+}
+
 .film1 > div{
     display: flex;
     justify-content: center;
