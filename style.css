@@ -993,12 +993,11 @@ footer::before {
 }
 
 .poetry2 a img{
-    width: 6rem !important;
+    width: 4rem !important;
     transform: rotate(5deg);
 }
 
 .poetry2 a img:hover{
-    width: 6rem !important;
     transform: rotate(-5deg);
 }
 
@@ -1020,7 +1019,7 @@ footer::before {
 }
 
 .poetry2 p{
-    max-width: 40rem;
+    max-width: 35rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -1048,6 +1047,11 @@ footer::before {
 
     .poetry2 iframe{
         height: 30rem;
+    }
+
+    .poetry2 a{
+        display: flex;
+        justify-content: center;
     }
 }
 
