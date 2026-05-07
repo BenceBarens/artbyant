@@ -890,7 +890,7 @@ footer::before {
 /* FILM ----------------------------------------------------------------------------------- */
 
 #film .wrapper{
-    background-image: url('img/film_wrapper2.jpg');
+    background-image: url('img/film/floridly2.jpg');
     background-color: rgba(0,0,0,0.4);
     background-blend-mode: darken;
     background-size: cover;
@@ -909,7 +909,7 @@ footer::before {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
     margin: 8rem 5rem;
 }
 
@@ -921,7 +921,7 @@ footer::before {
 }
 
 .film1 .glightbox img{
-    width: 10rem;
+    width: 9rem;
 }
 
 .film1 > div{
@@ -931,6 +931,33 @@ footer::before {
     gap: 2rem;
     flex-wrap: wrap;
     align-items: flex-start;
+}
+
+.film1 > div:first-of-type{
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    padding: 1em;
+    position: relative;
+}
+
+.film1 > div:first-of-type::before,
+.film1 > div:first-of-type::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+    background: url('img/icons/border.svg') repeat-x;
+    background-size: 10rem 0.5rem;
+}
+
+.film1 > div:first-of-type::before {
+    top: -0.5rem;
+}
+
+.film1 > div:first-of-type::after {
+    bottom: -0.5rem;
+    transform: scaleY(-1);
 }
 
 .film1 > div > div{
