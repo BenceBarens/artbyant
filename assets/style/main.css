@@ -1105,7 +1105,7 @@ footer::before {
 
 #contact form{
     margin: 1rem auto;
-    max-width: 30rem;
+    max-width: 40rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -1120,14 +1120,19 @@ footer::before {
 #contact form input, #contact form textarea{
     font-size: large;
     border: none;
-    border-bottom: var(--color-accent) solid 0.2rem;
+    border-bottom: var(--color-secondary) solid 0.2rem;
     padding: 0.5rem;
     background: none;
     color: var(--color-secondary);
 }
 
+#contact form textarea{
+    resize: vertical;
+    max-height: 15em;
+}
+
 #contact form input:focus, #contact form textarea:focus{
-    border-bottom: var(--color-secondary) solid 0.2rem;
+    border-bottom: var(--color-accent) solid 0.2rem;
     outline: none;
 }
 
