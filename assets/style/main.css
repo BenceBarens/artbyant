@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url(fonts/Inter.ttf) format('truetype');
+    src: url(../fonts/Inter.ttf) format('truetype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'Castoro';
-    src: url(fonts/Castoro.ttf) format('truetype');
+    src: url(../fonts/Castoro.ttf) format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
