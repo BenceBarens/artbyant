@@ -360,7 +360,7 @@ footer::before {
     left: 0;
     width: 100%;
     height: 0.5rem;
-    background-image: url('img/icons/border.svg');
+    background-image: url('../img/icons/border.svg');
     background-size: 10rem 0.5rem;
     background-repeat: repeat-x;
 }
@@ -377,7 +377,7 @@ footer::before {
 /* GALLERY ----------------------------------------------------------------------------------- */
 
 #gallery .wrapper{
-    background-image: url('img/gallery_wrapper.jpg');
+    background-image: url('../img/gallery_wrapper.jpg');
     background-size: cover;
     background-position:center;
     background-attachment:initial;
@@ -761,7 +761,7 @@ footer::before {
 /* EXHIBITIONS ----------------------------------------------------------------------------------- */
 
 #exhibitions .wrapper{
-    background-image: url('img/expositions_wrapper.jpg');
+    background-image: url('../img/expositions_wrapper.jpg');
     background-color: rgba(0,0,0,0.4);
     background-blend-mode: darken;
     background-size: cover;
@@ -890,7 +890,7 @@ footer::before {
 /* FILM ----------------------------------------------------------------------------------- */
 
 #film .wrapper{
-    background-image: url('img/film/floridly2.jpg');
+    background-image: url('../img/film/floridly2.jpg');
     background-color: rgba(0,0,0,0.4);
     background-blend-mode: darken;
     background-size: cover;
@@ -947,7 +947,7 @@ footer::before {
     left: 0;
     width: 100%;
     height: 0.5rem;
-    background: url('img/icons/border.svg') repeat-x;
+    background: url('../img/icons/border.svg') repeat-x;
     background-size: 10rem 0.5rem;
 }
 
@@ -986,7 +986,7 @@ footer::before {
 /* POETRY ----------------------------------------------------------------------------------- */
 
 #poetry .wrapper{
-    background-image: url('img/poetry-wrapper2.jpg');
+    background-image: url('../img/poetry-wrapper2.jpg');
     background-size: cover;
     background-position:left;
     background-attachment:initial;
