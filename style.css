@@ -157,11 +157,11 @@ nav ul a{
     text-decoration: none;
 }
 
-nav ul a:hover, nav ul .current{
+nav ul a:hover, a[aria-current="page"]{
     box-shadow: 0 -1rem 0rem -0.5rem var(--color-accent) inset;
 }
 
-.current{
+nav ul a[aria-current="page"]{
     font-weight: 700;
 }
 
