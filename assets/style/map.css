@@ -1,0 +1,116 @@
+#map main {
+    margin: 5rem auto;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr minmax(15rem, 35%);
+    grid-template-rows: min-content min-content min-content;
+    max-width: 70rem;
+    justify-content: center;
+    gap: 0 3rem;
+}
+
+#map main h1, #map main > p, #map main div:first-of-type{
+    grid-column: 1;
+}
+
+#globe-container {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    max-width: 100%;
+    aspect-ratio: 1;
+    background-color: #05090f;
+    border-radius: 500rem;
+}
+
+#map main div:first-of-type {
+    margin-top: 3rem;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 0;
+}
+
+#map progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 0.5rem;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#map progress::-webkit-progress-bar {
+    background: #eee;
+}
+
+#map progress::-webkit-progress-value {
+    background: var(--color-accent);
+    transition: width 0.4s ease;
+}
+
+#map progress::-moz-progress-bar {
+    background: var(--color-accent);
+    transition: width 0.4s ease;
+}
+
+#map main nav {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+#map main nav button{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border-radius: 50rem;
+    padding: 0.5rem 1rem;
+}
+
+#popup-container {
+    margin-top: -1.5rem;
+    text-align: center;
+}
+
+.popup {
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.4s ease;
+}
+
+.popup[aria-hidden="true"] {
+    opacity: 0;
+    height: 0;
+    padding: 0 2rem;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.popup img {
+    width: 5rem;
+    margin: 1rem;
+    display: inline-block;
+}
+
+@media screen and (max-width: 900px) {
+    #map main {
+        padding: 2rem;
+        grid-template-columns: 1fr;
+        max-width: 30rem;
+    }
+
+    #globe-container{
+        grid-column: 1;
+        grid-row: 3;
+        margin-top: 2rem;
+    }
+
+    #map main div:first-of-type{
+        grid-column: 1;
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTACT ART BY ANT</title>
+    <title>ART BY ANT | PRIVACY POLICY</title>
     <link rel="stylesheet" href="../assets/style/main.css">
-    <link rel="stylesheet" href="../assets/style/contact.css">
+    <link rel="stylesheet" href="../assets/style/privacy.css">
 
     <link rel="icon" type="image/png" href="../assets/img/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon/favicon.svg">
@@ -14,19 +14,18 @@
     <meta name="apple-mobile-web-app-title" content="Art by Ant">
     <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
 
-    <link rel="alternate" hreflang="en" href="https://artbyant.gallery/contact/">
-    <link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/contact/">
+    <link rel="alternate" hreflang="en" href="https://artbyant.gallery/privacy/">
+    <link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/privacy/">
 
-    <meta property="og:title" content="CONTACT ART BY ANT">
+    <meta property="og:title" content="ART BY ANT | PRIVACY POLICY">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://artbyant.gallery/assets/img/antoni.jpg">
-    <meta property="og:description" content="Discover the 'Visual Universe' of Antoni van de Geijn. He creates abstract, living worlds that go beyond traditional painting. Step into a universe of stories, emotion, and recurring characters.">
     <meta property="og:site_name" content="ART BY ANT">
     <meta property="og:locale" content="en_UK">
     <meta property="og:locale:alternate" content="es_ES">
-    <meta property="og:url" content="https://artbyant.gallery/contact/">
+    <meta property="og:url" content="https://artbyant.gallery/privacy/">
 </head>
-<body id="contact">
+<body id="privacy">
     <a href="#main" class="skip-link">Skip to content</a>
     <header>
         <nav>
@@ -45,7 +44,7 @@
                 <li><a href="../poetry">Poetry</a></li>
                 <li><a href="../film">Film</a></li>
                 <li><a href="../about">About</a></li>
-                <li><a href="" aria-current="page">Contact</a></li>
+                <li><a href="../contact">Contact</a></li>
                 <li>
                     <div class="language-switcher">
                         <button onclick="switchLanguage('en')" id="lang-en"><img src="../assets/img/icons/english.svg" alt="Switch to English"></button>
@@ -57,56 +56,25 @@
     </header>
 
     <main id="main">
-    <h1>Contact</h1>
-
-        <form id="contactForm" action="https://formspree.io/f/xpwldker" method="POST">
-
-        <label>NAME
-            <input type="text" name="name" placeholder="Bence Barens" required>
-        </label>
-
-        <label>EMAIL ADDRESS
-            <input type="email" name="email" placeholder="hello@bencebarens.nl" required>
-        </label>
-
-        <label>PHONE NUMBER
-            <input type="tel" name="phone" placeholder="+1 (555) 123-4567">
-        </label>
-
-        <label>MESSAGE
-            <textarea name="message" placeholder="Hi Antoni, ..." required rows="5"></textarea>
-        </label>
-
-        <button type="submit">Send</button>
-    </form>
-
-    <p id="responseMessage" class="hidden">Thank you for your message.<br>Antoni will get back to you as soon as possible.</p>
-
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const form = this;
-        const formData = new FormData(form);
-
-        fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-        }).then(response => {
-            if (response.ok) {
-            form.style.display = "none";
-            document.getElementById("responseMessage").classList.remove("hidden");
-            } else {
-            alert("Something seems to have gone wrong. Please try again or send an email to Antoni directly at contact@artbyant.gallery.");
-            }
-        }).catch(error => {
-            console.error("Verzendfout:", error);
-            alert("Verzenden mislukt. Probeer het opnieuw.");
-        });
-        });
-    </script>
-
+        <h1>Privacy policy</h1>
+        <p>We value your privacy. This website collects as little data as possible and doesn't use any tracking technologies. The only cookies used are the onces placed by third parties, such as YouTube.</p>
+        <h2>Cookies and Preferences</h2>
+        <ul>
+            <li>Cookies: We do not place tracking, marketing, or analytics cookies on your device natively. Pages with embedded YouTube players can however place cookies provided by YouTube. To minimise tracking, the embed uses the "no-cookie" YouTube domain.</li>
+            <li>System Preferences: Our website only reads your local system preferences (such as language/colour scheme preferences or system font settings) to display the site correctly. These settings are not stored on our servers and are never used to identify you.</li>
+        </ul>
+        <h2>Contact form</h2>
+        <p>When you use our contact form, we ask for the following information:</p>
+        <ul>
+            <li>Name</li>
+            <li>Email address</li>
+            <li>Your message</li>
+        </ul>
+        <p>This information is strictly used to read and respond to your inquiry. We will never use your email address for newsletters or marketing, nor will we ever share your details with third parties.</p>
+        <h2>Server logs</h2>
+        <p>When you visit our website, the web host (GitHub Pages) automatically processes standard technical data (such as your IP address) to establish a connection and keep the website secure. We do not analyze this data or use it to identify individual visitors.</p>
+        <h2>Your rights</h2>
+        <p>You have the right to request access to, correction of, or deletion of any personal information provided through the contact form. Feel free to contact us via the email address listed on this site to make a request.</p>
     </main>
 
     <footer>
@@ -120,7 +88,7 @@
             <li>&copy; 2024-2025 Antoni van de Geijn</li>
         </ul>
         <ul>
-            <li><a href="../privacy">Privacy policy</a></li>
+            <li><a href="" aria-current="page">Privacy policy</a></li>
             <li>Brand & website <a href="https://bencebarens.nl/" target="_blank">Made by Bence</a></li>
         </ul>
     </footer>

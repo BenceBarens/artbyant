@@ -1,0 +1,93 @@
+#film .wrapper{
+    background-image: url('../img/film/floridly2.jpg');
+    background-color: rgba(0,0,0,0.4);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position:center;
+    background-attachment:initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;
+    margin-bottom: 5rem;
+    color: var(--color-secondary);
+}
+
+.film1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    margin: 8rem 5rem;
+}
+
+.film1 .gallery-wrapper{
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.film1 .glightbox img{
+    width: 9rem;
+}
+
+.film1 > div{
+    display: flex;
+    justify-content: center;
+    max-width: 80rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.film1 > div:first-of-type{
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    padding: 1em;
+    position: relative;
+}
+
+.film1 > div:first-of-type::before,
+.film1 > div:first-of-type::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+    background: url('../img/icons/border.svg') repeat-x;
+    background-size: 10rem 0.5rem;
+}
+
+.film1 > div:first-of-type::before {
+    top: -0.5rem;
+}
+
+.film1 > div:first-of-type::after {
+    bottom: -0.5rem;
+    transform: scaleY(-1);
+}
+
+.film1 > div > div{
+    flex: 1 1 20rem;
+}
+
+.film1 iframe{
+    width: 35rem;
+    flex: 0 1 35rem;
+    max-width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+    .film1 > div{
+        gap: 1rem;
+    }
+
+    .film1{
+        gap: 4rem;
+        margin: 2rem;
+    }
+}
