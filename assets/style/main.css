@@ -133,6 +133,11 @@ header img{
     width: 3rem;
 }
 
+header nav div a img{
+    width: 2.5em;
+    margin-left: 0.25em;
+}
+
 header nav{
     display: flex;
     justify-content: space-between;
@@ -151,14 +156,14 @@ nav ul{
 }
 
 nav ul a{
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
     display: block;
     box-shadow:0 0 0 0rem var(--color-accent) inset;
     text-decoration: none;
 }
 
 nav ul a:hover, a[aria-current="page"]{
-    box-shadow: 0 -1rem 0rem -0.5rem var(--color-accent) inset;
+    box-shadow: 0 -0.5rem 0rem -0.25rem var(--color-accent) inset;
 }
 
 nav ul a[aria-current="page"]{
@@ -316,7 +321,7 @@ header {
         border-right: rgba(28, 28, 28, 0) 0.5rem solid;
     }
 
-    header nav ul .current{
+    header nav ul a[aria-current="page"]{
         border-right: var(--color-accent) 0.5rem solid;
         box-shadow: none;
     }
