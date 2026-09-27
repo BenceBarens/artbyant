@@ -56,7 +56,7 @@ const positions = [
 const scales = [0.55, 0.25, 0.18, 0.18, 0.25, 0.2, 0.4];
 
 createCombinedTexture(
-    ['../../img/map/1.webp','../../img/map/2.webp','../../img/map/3.webp','../../img/map/4.webp','../../img/map/5.webp','../../img/map/6.webp','../../img/map/7.webp'],
+    ['../../assets/img/map/1.webp','../../assets/img/map/2.webp','../../assets/img/map/3.webp','../../assets/img/map/4.webp','../../assets/img/map/5.webp','../../assets/img/map/6.webp','../../assets/img/map/7.webp'],
     positions,
     scales
 ).then(texture => {
