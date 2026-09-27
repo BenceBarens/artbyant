@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url(fonts/Inter.ttf) format('truetype');
+    src: url(../fonts/Inter.ttf) format('truetype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'Castoro';
-    src: url(fonts/Castoro.ttf) format('truetype');
+    src: url(../fonts/Castoro.ttf) format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -133,6 +133,11 @@ header img{
     width: 3rem;
 }
 
+header nav div a img{
+    width: 2.5em;
+    margin-left: 0.25em;
+}
+
 header nav{
     display: flex;
     justify-content: space-between;
@@ -151,14 +156,14 @@ nav ul{
 }
 
 nav ul a{
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
     display: block;
     box-shadow:0 0 0 0rem var(--color-accent) inset;
     text-decoration: none;
 }
 
 nav ul a:hover, a[aria-current="page"]{
-    box-shadow: 0 -1rem 0rem -0.5rem var(--color-accent) inset;
+    box-shadow: 0 -0.5rem 0rem -0.25rem var(--color-accent) inset;
 }
 
 nav ul a[aria-current="page"]{
@@ -316,7 +321,7 @@ header {
         border-right: rgba(28, 28, 28, 0) 0.5rem solid;
     }
 
-    header nav ul .current{
+    header nav ul a[aria-current="page"]{
         border-right: var(--color-accent) 0.5rem solid;
         box-shadow: none;
     }
@@ -360,7 +365,7 @@ footer::before {
     left: 0;
     width: 100%;
     height: 0.5rem;
-    background-image: url('img/icons/border.svg');
+    background-image: url('../img/icons/border.svg');
     background-size: 10rem 0.5rem;
     background-repeat: repeat-x;
 }
@@ -377,7 +382,7 @@ footer::before {
 /* GALLERY ----------------------------------------------------------------------------------- */
 
 #gallery .wrapper{
-    background-image: url('img/gallery_wrapper.jpg');
+    background-image: url('../img/gallery_wrapper.jpg');
     background-size: cover;
     background-position:center;
     background-attachment:initial;
@@ -761,7 +766,7 @@ footer::before {
 /* EXHIBITIONS ----------------------------------------------------------------------------------- */
 
 #exhibitions .wrapper{
-    background-image: url('img/expositions_wrapper.jpg');
+    background-image: url('../img/expositions_wrapper.jpg');
     background-color: rgba(0,0,0,0.4);
     background-blend-mode: darken;
     background-size: cover;
@@ -890,7 +895,7 @@ footer::before {
 /* FILM ----------------------------------------------------------------------------------- */
 
 #film .wrapper{
-    background-image: url('img/film/floridly2.jpg');
+    background-image: url('../img/film/floridly2.jpg');
     background-color: rgba(0,0,0,0.4);
     background-blend-mode: darken;
     background-size: cover;
@@ -947,7 +952,7 @@ footer::before {
     left: 0;
     width: 100%;
     height: 0.5rem;
-    background: url('img/icons/border.svg') repeat-x;
+    background: url('../img/icons/border.svg') repeat-x;
     background-size: 10rem 0.5rem;
 }
 
@@ -986,7 +991,7 @@ footer::before {
 /* POETRY ----------------------------------------------------------------------------------- */
 
 #poetry .wrapper{
-    background-image: url('img/poetry-wrapper2.jpg');
+    background-image: url('../img/poetry-wrapper2.jpg');
     background-size: cover;
     background-position:left;
     background-attachment:initial;
@@ -1105,7 +1110,7 @@ footer::before {
 
 #contact form{
     margin: 1rem auto;
-    max-width: 30rem;
+    max-width: 40rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -1120,14 +1125,19 @@ footer::before {
 #contact form input, #contact form textarea{
     font-size: large;
     border: none;
-    border-bottom: var(--color-accent) solid 0.2rem;
+    border-bottom: var(--color-secondary) solid 0.2rem;
     padding: 0.5rem;
     background: none;
     color: var(--color-secondary);
 }
 
+#contact form textarea{
+    resize: vertical;
+    max-height: 15em;
+}
+
 #contact form input:focus, #contact form textarea:focus{
-    border-bottom: var(--color-secondary) solid 0.2rem;
+    border-bottom: var(--color-accent) solid 0.2rem;
     outline: none;
 }
 
