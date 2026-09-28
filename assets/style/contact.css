@@ -39,18 +39,6 @@
     outline: none;
 }
 
-#contact form button{
-    background-color: var(--color-accent);
-    color: var(--color-primary);
-    width: fit-content;
-    padding: 0.5rem 1rem;
-    border-radius: 10rem;
-}
-
-#contact form button:hover{
-    transform: scale(1.05);
-}
-
 #responseMessage{
     font-size: large;
     text-align: center;

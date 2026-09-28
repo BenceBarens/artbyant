@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACERCA DE ANTONI</title>
+    <title>BLOG DE ANTONI</title>
     <link rel="stylesheet" href="../../assets/style/main.css">
-    <link rel="stylesheet" href="../../assets/style/about.css">
+    <link rel="stylesheet" href="../../assets/style/blog.css">
 
     <link rel="icon" type="image/png" href="../../assets/img/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon/favicon.svg">
@@ -14,19 +14,19 @@
     <meta name="apple-mobile-web-app-title" content="Art by Ant">
     <link rel="manifest" href="../../assets/img/favicon/site.webmanifest">
 
-    <link rel="alternate" hreflang="en" href="https://artbyant.gallery/about/">
-    <link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/about/">
+    <link rel="alternate" hreflang="en" href="https://artbyant.gallery/blog/">
+    <link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/blog/">
 
-    <meta property="og:title" content="ACERCA DE ANTONI">
+    <meta property="og:title" content="BLOG DE ANTONI">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://artbyant.gallery/assets/img/antoni.jpg">
     <meta property="og:description" content="Descubre el «Universo Visual» de Antoni van de Geijn. Crea mundos vibrantes y abstractos que trascienden la pintura tradicional. Sumérgete en un universo de historias, emociones y personajes recurrentes.">
     <meta property="og:site_name" content="ART BY ANT">
     <meta property="og:locale" content="es_ES">
     <meta property="og:locale:alternate" content="en_UK">
-    <meta property="og:url" content="https://artbyant.gallery/es/about/">
+    <meta property="og:url" content="https://artbyant.gallery/es/blog/">
 </head>
-<body id="about">
+<body id="blog">
     <a href="#main" class="skip-link">Saltar al contenido</a>
     <header>
         <nav>
@@ -43,9 +43,9 @@
                 <li><a href="../exhibitions">Exposiciones</a></li>
                 <li><a href="../map">Mapa</a></li>
                 <li><a href="../poetry">Poesía</a></li>
-                <li><a href="../blog">Blog</a></li>
+                <li><a href="" aria-current="page">Blog</a></li>
                 <li><a href="../film">Cine</a></li>
-                <li><a href="" aria-current="page">Acerca de</a></li>
+                <li><a href="../about">Acerca de</a></li>
                 <li><a href="../contact">Contacto</a></li>
                 <li>
                     <div class="language-switcher">
@@ -58,24 +58,8 @@
     </header>
 
     <main id="main">
-        <div>
-            <img src="../../assets/img/antoni.jpg" alt="" id="imgantoni">
-            <a href="https://www.instagram.com/antonivdgeijn/" target="_blank"><img src="../../assets/img/icons/instagram.svg" alt="">@ANTONIVDGEIJN</a>
-            <img src="../../assets/img/about1.jpg" alt="" id="imgantoni1">
-            <img src="../../assets/img/about2.jpg" alt="" id="imgantoni2">
-        </div>
-        <div>
-            <h1>Antoni van de Geijn</h1>
-            <p>Antoni van de Geijn es un artista visionario de <span id="age">20</span> años con base en Madrid. Su obra va más allá de la pintura tradicional y se convierte en un acto de creación de mundos a través del arte.</p>
-            <p>En el centro de su práctica está El Universo Visual, un cuerpo de trabajo cinematográfico e interconectado que transforma la pintura en narrativa. Fascinado por la construcción de mundos, Antoni no replica lo visible; en cambio, dirige la mirada hacia su interior y crea realidades abstractas e imaginadas que exploran la emoción, la memoria y las historias no contadas. Cada lienzo es una escena dentro de este universo en expansión, donde los personajes reaparecen, se cruzan e interactúan en diferentes obras dentro de una línea temporal compleja y en desarrollo.</p>
-            <p>Sus mundos están vivos, evolucionan de forma orgánica y profundizan la sensación de inmersión con cada nueva pieza. Para darles forma, Antoni experimenta con herramientas poco convencionales como compases, cartón y espátulas, creando superficies táctiles y texturizadas que unen la abstracción con la narrativa.</p>
-            <p>Influenciado por el cine y la poesía, compone su obra con un ritmo cinematográfico y una resonancia poética, entrelazando la narración visual con una profunda carga emocional. A través de Art by Ant, ha creado un espacio multidisciplinario donde la pintura, el cine y la poesía convergen.</p>
-            <p>Adéntrate en El Universo Visual y explora los mundos imaginados de Antoni van de Geijn, una voz creativa emergente que busca abrir nuevos caminos en el arte contemporáneo.</p>
-        </div>
-        <div id="henk">
-            <img src="../../assets/img/about1.jpg" alt="">
-            <img src="../../assets/img/about2.jpg" alt="">
-        </div>
+        <h1>Blog</h1>
+        <ul id="feed-container">Cargando artículos...</ul>
     </main>
 
     <footer>
@@ -95,8 +79,6 @@
     </footer>
 
     <script src="../../assets/script/main.js"></script>
-    <script>
-        document.getElementById('age').textContent = new Date().getFullYear() - 2005 - (new Date() < new Date(new Date().getFullYear(), 9, 13) ? 1 : 0);
-    </script>
+    <script src="../../assets/script/substack-es.js"></script>
 </body>
 </html>

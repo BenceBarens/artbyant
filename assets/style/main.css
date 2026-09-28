@@ -108,23 +108,26 @@ ul{
     margin: 0;
 }
 
-.gallery span{
-    background-color: var(--color-accent);
-    text-transform: uppercase;
-    text-align: left;
-    font-size: smaller;
-    margin-right: .5rem;
-    padding: .2rem .5rem;
-    border-radius: 10rem;
-    white-space: nowrap;
-}
-
 button{
     background-color: transparent;
     border: none;
     cursor: pointer;
     font-size: inherit;
     color: inherit;
+}
+
+.button{
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 10rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:hover{
+    transform: scale(1.05);
 }
 
 /* HEADER ------------------------------------------------------------------------------------ */
@@ -381,7 +384,7 @@ footer::before {
 
 /* PAGE THEME ----------------------------------------------------------------------------------- */
 
-#about, #map, #exhibitions, #film, #poetry, #contact, #privacy{
+#about, #map, #exhibitions, #film, #poetry, #contact, #privacy, #blog{
     background-color: var(--color-primary);
     color: var(--color-secondary);
 }
