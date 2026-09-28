@@ -57,7 +57,7 @@ try {
         : '';
 
     const slug = new URL(item.link).pathname.split('/').filter(Boolean).pop();
-    const myPostUrl = `blog/p?slug=${encodeURIComponent(slug)}`;
+    const myPostUrl = `p?slug=${encodeURIComponent(slug)}`;
 
     return `
         <li><article class="post">
