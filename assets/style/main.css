@@ -116,6 +116,19 @@ button{
     color: inherit;
 }
 
+.button{
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 10rem;
+    text-decoration: none;
+}
+
+.button:hover{
+    transform: scale(1.05);
+}
+
 /* HEADER ------------------------------------------------------------------------------------ */
 
 header img{
