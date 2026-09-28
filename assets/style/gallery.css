@@ -17,6 +17,17 @@
     padding: 1rem 10rem;
 }
 
+.gallery span{
+    background-color: var(--color-accent);
+    text-transform: uppercase;
+    text-align: left;
+    font-size: smaller;
+    margin-right: .5rem;
+    padding: .2rem .5rem;
+    border-radius: 10rem;
+    white-space: nowrap;
+}
+
 #gallery2{
     display: flex;
     justify-content: center;
