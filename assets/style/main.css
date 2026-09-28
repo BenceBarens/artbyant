@@ -123,6 +123,7 @@ button{
     padding: 0.5rem 1rem;
     border-radius: 10rem;
     text-decoration: none;
+    display: inline-block;
 }
 
 .button:hover{
@@ -383,7 +384,7 @@ footer::before {
 
 /* PAGE THEME ----------------------------------------------------------------------------------- */
 
-#about, #map, #exhibitions, #film, #poetry, #contact, #privacy{
+#about, #map, #exhibitions, #film, #poetry, #contact, #privacy, #blog{
     background-color: var(--color-primary);
     color: var(--color-secondary);
 }

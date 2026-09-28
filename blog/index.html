@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTACT ART BY ANT</title>
+    <title>BLOG BY ANTONI</title>
     <link rel="stylesheet" href="../assets/style/main.css">
-    <link rel="stylesheet" href="../assets/style/contact.css">
+    <link rel="stylesheet" href="../assets/style/blog.css">
 
     <link rel="icon" type="image/png" href="../assets/img/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon/favicon.svg">
@@ -14,19 +14,19 @@
     <meta name="apple-mobile-web-app-title" content="Art by Ant">
     <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
 
-    <link rel="alternate" hreflang="en" href="https://artbyant.gallery/contact/">
-    <link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/contact/">
+    <link rel="alternate" hreflang="en" href="https://artbyant.gallery/blog/">
+    <link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/blog/">
 
-    <meta property="og:title" content="CONTACT ART BY ANT">
+    <meta property="og:title" content="BLOG BY ANTONI">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://artbyant.gallery/assets/img/antoni.jpg">
     <meta property="og:description" content="Discover the 'Visual Universe' of Antoni van de Geijn. He creates abstract, living worlds that go beyond traditional painting. Step into a universe of stories, emotion, and recurring characters.">
     <meta property="og:site_name" content="ART BY ANT">
     <meta property="og:locale" content="en_UK">
     <meta property="og:locale:alternate" content="es_ES">
-    <meta property="og:url" content="https://artbyant.gallery/contact/">
+    <meta property="og:url" content="https://artbyant.gallery/blog/">
 </head>
-<body id="contact">
+<body id="blog">
     <a href="#main" class="skip-link">Skip to content</a>
     <header>
         <nav>
@@ -43,10 +43,10 @@
                 <li><a href="../exhibitions">Exhibitions</a></li>
                 <li><a href="../map">Map</a></li>
                 <li><a href="../poetry">Poetry</a></li>
-                <li><a href="../blog">Blog</a></li>
+                <li><a href="" aria-current="page">Blog</a></li>
                 <li><a href="../film">Film</a></li>
                 <li><a href="../about">About</a></li>
-                <li><a href="" aria-current="page">Contact</a></li>
+                <li><a href="../contact">Contact</a></li>
                 <li>
                     <div class="language-switcher">
                         <button onclick="switchLanguage('en')" id="lang-en"><img src="../assets/img/icons/english.svg" alt="Switch to English"></button>
@@ -58,56 +58,8 @@
     </header>
 
     <main id="main">
-    <h1>Contact</h1>
-
-        <form id="contactForm" action="https://formspree.io/f/xpwldker" method="POST">
-
-        <label>NAME
-            <input type="text" name="name" placeholder="Bence Barens" required>
-        </label>
-
-        <label>EMAIL ADDRESS
-            <input type="email" name="email" placeholder="hello@bencebarens.nl" required>
-        </label>
-
-        <label>PHONE NUMBER
-            <input type="tel" name="phone" placeholder="+1 (555) 123-4567">
-        </label>
-
-        <label>MESSAGE
-            <textarea name="message" placeholder="Hi Antoni, ..." required rows="5"></textarea>
-        </label>
-
-        <button type="submit" class="button">Send</button>
-    </form>
-
-    <p id="responseMessage" class="hidden">Thank you for your message.<br>Antoni will get back to you as soon as possible.</p>
-
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const form = this;
-        const formData = new FormData(form);
-
-        fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-        }).then(response => {
-            if (response.ok) {
-            form.style.display = "none";
-            document.getElementById("responseMessage").classList.remove("hidden");
-            } else {
-            alert("Something seems to have gone wrong. Please try again or send an email to Antoni directly at contact@artbyant.gallery.");
-            }
-        }).catch(error => {
-            console.error("Verzendfout:", error);
-            alert("Verzenden mislukt. Probeer het opnieuw.");
-        });
-        });
-    </script>
-
+        <h1>Blog</h1>
+        <ul id="feed-container">Loading articles...</ul>
     </main>
 
     <footer>
@@ -127,5 +79,6 @@
     </footer>
 
     <script src="../assets/script/main.js"></script>
+    <script src="../assets/script/substack.js"></script>
 </body>
 </html>
