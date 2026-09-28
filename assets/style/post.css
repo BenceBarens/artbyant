@@ -1,0 +1,19 @@
+main{
+    max-width: 40em;
+    margin: 8em auto;
+    padding: 1em;
+}
+
+main img{
+    max-width: min(40em, 100%);
+    height: auto;
+}
+
+main figure{
+    padding: 0;
+    margin: 0;
+}
+
+.image-link-expand{
+    display: none;
+}
