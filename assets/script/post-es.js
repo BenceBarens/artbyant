@@ -1,13 +1,11 @@
 const FEED_URL = `https://antonivdgeijn.substack.com/feed`;
 const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(FEED_URL)}`;
-const colorThief = new ColorThief();
 
 function calculateReadingTime(htmlString) {
     if (!htmlString) return '1';
     const cleanText = htmlString.replace(/<[^>]*>?/gm, ' ').trim();
     const words = cleanText.split(/\s+/).filter(word => word.length > 0);
-    const minutes = Math.ceil(words.length / 230);
-    return minutes;
+    return Math.ceil(words.length / 230);
 }
 
 function formatDate(pubDateString) {
@@ -21,52 +19,44 @@ function formatDate(pubDateString) {
     });
 }
 
-async function applyCoverColor(post) {
-    let imgUrl = post?.thumbnail;
-    if (!imgUrl && (post?.content || post?.description)) {
-        const doc = new DOMParser().parseFromString(post.content || post.description, 'text/html');
-        imgUrl = doc.querySelector('img')?.src || null;
-    }
+function extractFirstImage(htmlString) {
+    if (!htmlString) return null;
+    const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+    return doc.querySelector('img')?.src || null;
+}
 
-    if (!imgUrl) return;
+function setVibrantColor(imageUrl, element) {
+    if (!imageUrl || typeof ColorThief === 'undefined') return;
 
-    const accentColor = await new Promise((resolve) => {
-        const img = new Image();
-        img.crossOrigin = 'Anonymous';
+    const img = new Image();
+    img.crossOrigin = 'Anonymous';
 
-        img.onload = () => {
+    img.onload = () => {
         try {
+            const colorThief = new ColorThief();
             const palette = colorThief.getPalette(img, 8);
+            if (!palette?.length) return;
+
             let mostVibrant = palette[0];
-            let maxSaturation = -1;
+            let maxSat = -1;
 
             palette.forEach(([r, g, b]) => {
-            const max = Math.max(r, g, b);
-            const min = Math.min(r, g, b);
-            const saturation = max === 0 ? 0 : (max - min) / max;
+                const max = Math.max(r, g, b);
+                const min = Math.min(r, g, b);
+                const sat = max === 0 ? 0 : (max - min) / max;
 
-            if (max > 40 && saturation > maxSaturation) {
-                maxSaturation = saturation;
-                mostVibrant = [r, g, b];
-            }
+                if (max > 40 && sat > maxSat) {
+                    maxSat = sat;
+                    mostVibrant = [r, g, b];
+                }
             });
 
-            const [r, g, b] = mostVibrant;
-            resolve(`rgb(${r}, ${g}, ${b})`);
-        } catch (err) {
-            resolve(null);
-        }
-        };
+            element.style.setProperty('--cover-color', `rgb(${mostVibrant.join(', ')})`);
+        } catch {}
+    };
 
-        img.onerror = () => resolve(null);
-
-        const sep = imgUrl.includes('?') ? '&' : '?';
-        img.src = `${imgUrl}${sep}cors_bust=${Date.now()}`;
-    });
-
-    if (accentColor) {
-        document.documentElement.style.setProperty('--cover-color', accentColor);
-    }
+    const sep = imageUrl.includes('?') ? '&' : '?';
+    img.src = `${imageUrl}${sep}cors_bust=${Date.now()}`;
 }
 
 async function loadPost() {
@@ -89,13 +79,26 @@ async function loadPost() {
             return;
         }
 
-        await applyCoverColor(post);
+        const imageUrl = post.thumbnail || extractFirstImage(post.content || post.description);
+        if (imageUrl) {
+            setVibrantColor(imageUrl, document.documentElement);
+        }
 
         const subtitle = post.description ? `<p id="subtitle">${post.description}</p>` : '';
         const date = formatDate(post.pubDate);
         const readingTime = calculateReadingTime(post.content || post.description);
 
         document.title = `${post.title} | BLOG DE ANTONI`;
+
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute("content", `${post.title} | BLOG DE ANTONI`);
+
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc && post.description) ogDesc.setAttribute("content", post.description);
+
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage && imageUrl) ogImage.setAttribute("content", imageUrl);
+
         document.getElementById('article-content').innerHTML = `
             <a href="../" class="button2" aria-label="Back to all posts">&larr;</a>
             <span class="meta">Lectura de ${readingTime} min • Publicado el <time datetime="${post.pubDate}">${date}</time></span>
