@@ -27,6 +27,7 @@ main img{
 h1{
     margin: 0.5em 0 0.25em 0;
     line-height: 1.1;
+    text-align: left;
 }
 
 @media only screen and (max-width: 768px) {

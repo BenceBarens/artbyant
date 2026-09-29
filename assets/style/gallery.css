@@ -1,3 +1,8 @@
+#gallery{
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
 #gallery .wrapper{
     background-image: url('../img/gallery_wrapper.jpg');
     background-size: cover;

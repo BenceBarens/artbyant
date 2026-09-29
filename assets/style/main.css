@@ -33,7 +33,11 @@
 
 html, body{
     margin: 0;
-    
+}
+
+body{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -45,6 +49,7 @@ h1, h2, h3, h4, h5, h6{
 
 h1{
     font-size: 3rem;
+    text-align: center;
 }
 
 h2{
@@ -234,21 +239,15 @@ header {
         transform: translateY(-100%);
     }
 
-    @media only screen and (min-width: 768px) {
-        
-        /* for white pages without header */
-        #body404 header{
-            background-color: var(--color-secondary);
-            color:var(--color-primary);
-        }
+    /* for pages with lighter hero's ------------ */
 
-        /* for pages with lighter headers */
+    @media only screen and (min-width: 768px) {
+
         #gallery header, #poetry header{
             color: var(--color-primary);
         }
     }
 
-    /* for pages with lighter headers */
     #gallery, #poetry{
         header img{
             filter: brightness(0);
@@ -258,6 +257,8 @@ header {
             filter: none;
         }
     }
+
+    /* ----------------------------------------- */
 }
 
 @media only screen and (max-width: 768px) {
@@ -391,11 +392,4 @@ footer::before {
         gap: 2rem;
         justify-content: center;
     }
-}
-
-/* PAGE THEME ----------------------------------------------------------------------------------- */
-
-#about, #map, #exhibitions, #film, #poetry, #contact, #privacy, #blog{
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
 }
