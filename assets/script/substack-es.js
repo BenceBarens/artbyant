@@ -48,7 +48,7 @@ try {
         const img = doc.querySelector('img');
         
         return img ? img.src : null;
-        }
+    }
 
     const imageUrl = item.thumbnail || extractFirstImage(item.content || item.description);
 
