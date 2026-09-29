@@ -38,6 +38,18 @@
 	<xhtml:link rel="alternate" hreflang="en" href="https://artbyant.gallery/poetry/" />
 </url>
 <url>
+	<loc>https://artbyant.gallery/blog/</loc>
+	<lastmod>2026-09-29T13:46:45+01:00</lastmod>
+	<priority>0.8</priority>
+	<xhtml:link rel="alternate" hreflang="es" href="https://artbyant.gallery/es/blog/" />
+</url>
+<url>
+	<loc>https://artbyant.gallery/es/blog/</loc>
+	<lastmod>2026-09-29T13:46:45+01:00</lastmod>
+	<priority>0.6</priority>
+	<xhtml:link rel="alternate" hreflang="en" href="https://artbyant.gallery/blog/" />
+</url>
+<url>
 	<loc>https://artbyant.gallery/film/</loc>
 	<lastmod>2025-08-31T13:46:45+01:00</lastmod>
 	<priority>0.8</priority>
