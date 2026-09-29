@@ -1,5 +1,5 @@
 :root{
-    --cover-color: rgba(255,255,255,0.1);
+    --cover-color: var(--color-accent);
 }
 
 main{
@@ -21,14 +21,30 @@ main{
 }
 
 .post{
+    position: relative;
     display: flex;
     justify-content: space-between;
     gap: 2em;
     padding: 1em;
 }
 
-.post:hover{
-    background-color: var(--cover-color);
+.post::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+    background-image: linear-gradient(
+        to left, color-mix(in srgb, var(--cover-color) 30%, transparent) 0%, transparent 100%
+    );
+
+    opacity: 0;
+    transition: all 200ms ease;
+}
+
+.post:hover::before {
+    opacity: 1;
 }
 
 .post > div{
