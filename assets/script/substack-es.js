@@ -28,6 +28,40 @@ async function loadSubstackFeed() {
         return img ? img.src : null;
     }
 
+    function setVibrantColor(imageUrl, element) {
+        if (!imageUrl || typeof ColorThief === 'undefined') return;
+
+        const img = new Image();
+        img.crossOrigin = 'Anonymous';
+
+        img.onload = () => {
+            try {
+                const colorThief = new ColorThief();
+                const palette = colorThief.getPalette(img, 8);
+                if (!palette?.length) return;
+
+                let mostVibrant = palette[0];
+                let maxSat = -1;
+
+                palette.forEach(([r, g, b]) => {
+                    const max = Math.max(r, g, b);
+                    const min = Math.min(r, g, b);
+                    const sat = max === 0 ? 0 : (max - min) / max;
+
+                    if (max > 40 && sat > maxSat) {
+                        maxSat = sat;
+                        mostVibrant = [r, g, b];
+                    }
+                });
+
+                element.style.setProperty('--cover-color', `rgb(${mostVibrant.join(', ')})`);
+            } catch {}
+        };
+
+        const sep = imageUrl.includes('?') ? '&' : '?';
+        img.src = `${imageUrl}${sep}cors_bust=${Date.now()}`;
+    }
+
     try {
         const response = await fetch(API_URL);
         if (!response.ok) throw new Error('Error retrieving data.');
@@ -60,7 +94,7 @@ async function loadSubstackFeed() {
             : '';
 
         return `
-            <li><a href="${myPostUrl}"><article class="post">
+            <li data-image="${imageUrl || ''}"><a href="${myPostUrl}"><article class="post">
                 <div>
                     <div class="meta">Lectura de ${readingTime} min • Publicado el <time datetime="${item.pubDate}">${date}</time></div>
                     <h2>${item.title}</h2>
@@ -70,6 +104,11 @@ async function loadSubstackFeed() {
             </article></a></li>
         `;
         }).join('');
+
+        container.querySelectorAll('li[data-image]').forEach(li => {
+            const url = li.dataset.image;
+            if (url) setVibrantColor(url, li);
+        });
 
     } catch (error) {
         container.innerHTML = `<p>No se pudieron cargar los artículos: ${error.message}</p>`;
