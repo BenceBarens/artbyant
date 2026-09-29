@@ -120,7 +120,7 @@ button{
     background-color: var(--color-accent);
     color: var(--color-primary);
     width: fit-content;
-    padding: 0.5rem 1rem;
+    padding:  0.7rem 1.25rem;
     border-radius: 10rem;
     text-decoration: none;
     display: inline-block;
@@ -131,7 +131,7 @@ button{
     color: inherit;
     border: 0.1em solid var(--color-accent);
     width: fit-content;
-    padding: 0.5rem 1rem;
+    padding:  0.7rem 1.25rem;
     border-radius: 10rem;
     text-decoration: none;
     display: inline-block;
