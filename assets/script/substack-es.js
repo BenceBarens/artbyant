@@ -4,6 +4,30 @@ const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURICompone
 async function loadSubstackFeed() {
 const container = document.getElementById('feed-container');
 
+function calculateReadingTime(htmlString) {
+    if (!htmlString) return '1';
+
+    const cleanText = htmlString.replace(/<[^>]*>?/gm, ' ').trim();
+
+    const words = cleanText.split(/\s+/).filter(word => word.length > 0);
+    const wordCount = words.length;
+
+    const wordsPerMinute = 230;
+    const minutes = Math.ceil(wordCount / wordsPerMinute);
+
+    return minutes;
+}
+
+function extractFirstImage(htmlString) {
+    if (!htmlString) return null;
+    
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    const img = doc.querySelector('img');
+    
+    return img ? img.src : null;
+}
+
 try {
     const response = await fetch(API_URL);
     if (!response.ok) throw new Error('Error retrieving data.');
@@ -21,34 +45,10 @@ try {
         ...(isCurrentYear ? {} : { year: 'numeric' })
     });
 
-    function calculateReadingTime(htmlString) {
-        if (!htmlString) return '1';
-
-        const cleanText = htmlString.replace(/<[^>]*>?/gm, ' ').trim();
-
-        const words = cleanText.split(/\s+/).filter(word => word.length > 0);
-        const wordCount = words.length;
-
-        const wordsPerMinute = 230;
-        const minutes = Math.ceil(wordCount / wordsPerMinute);
-
-        return minutes;
-    }
-
     const readingTime = calculateReadingTime(item.content || item.description);
 
     const cleanText = item.description.replace(/<[^>]*>?/gm, '').trim();
     const excerpt = cleanText.length > 200 ? cleanText.substring(0, 200) + '...' : cleanText;
-
-    function extractFirstImage(htmlString) {
-        if (!htmlString) return null;
-        
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(htmlString, 'text/html');
-        const img = doc.querySelector('img');
-        
-        return img ? img.src : null;
-        }
 
     const imageUrl = item.thumbnail || extractFirstImage(item.content || item.description);
 

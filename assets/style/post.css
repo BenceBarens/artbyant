@@ -1,3 +1,18 @@
+html{
+    background-color: var(--color-primary);
+    background-image: linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--cover-color) 20%, transparent) 0%,
+        color-mix(in srgb, var(--cover-color) 5%, transparent) 250px,
+        transparent 450px
+    );
+    background-repeat: no-repeat;
+}
+
+body{
+    background: none !important;
+}
+
 main{
     max-width: 40em;
     margin: 8em auto;
@@ -9,9 +24,39 @@ main img{
     height: auto;
 }
 
+h1{
+    margin: 0.5em 0 0.25em 0;
+    line-height: 1.1;
+}
+
+@media only screen and (max-width: 768px) {
+    h1{
+        font-size: 2.5em;
+    }
+}
+
+main #subtitle{
+    font-size: 1.4em;
+    margin: 0;
+}
+
+main .meta{
+    margin-left: 0.5em;
+}
+
+main #subtitle{
+    color: var(--color-accent);
+}
+
 main figure{
     padding: 0;
-    margin: 0;
+    margin: 3em auto;
+    width: fit-content;
+}
+
+main figure img{
+    max-height: 50em;
+    object-fit: contain;
 }
 
 .image-link-expand{
