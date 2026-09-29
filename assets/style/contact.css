@@ -3,7 +3,8 @@
 }
 
 #contact main{
-    margin: 8rem 5rem;
+    margin: 8rem auto;
+    padding: 0 1em;
 }
 
 #contact form{
