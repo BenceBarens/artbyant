@@ -52,28 +52,22 @@ try {
 
     const imageUrl = item.thumbnail || extractFirstImage(item.content || item.description);
 
+    const slug = new URL(item.link).pathname.split('/').filter(Boolean).pop();
+    const myPostUrl = `p?slug=${encodeURIComponent(slug)}`;
+
     const imageHtml = imageUrl 
         ? `<img src="${imageUrl}" alt="${item.title}" loading="lazy">` 
         : '';
 
-    const slug = new URL(item.link).pathname.split('/').filter(Boolean).pop();
-    const myPostUrl = `p?slug=${encodeURIComponent(slug)}`;
-
     return `
-        <li><article class="post">
-            <a href="${myPostUrl}">${imageHtml}</a>
+        <li><a href="${myPostUrl}"><article class="post">
             <div>
-                <div>
-                    <h2><a href="${myPostUrl}">${item.title}</a></h2>
-                    <div class="meta">${readingTime} min read • Posted on <time datetime="${item.pubDate}">${date}</time></div>
-                    <p>${excerpt}</p>
-                </div>
-                <div class="actionbar">
-                    <a href="${myPostUrl}" class="button">Read full article</a>
-                    <a href="${item.link}" target="_blank" rel="noopener" class="button">Open on Substack</a>
-                </div>
+                <div class="meta">${readingTime} min read • Posted on <time datetime="${item.pubDate}">${date}</time></div>
+                <h2>${item.title}</h2>
+                <p>${excerpt}</p>
             </div>
-        </article></li>
+            ${imageHtml}
+        </article></a></li>
     `;
     }).join('');
 
