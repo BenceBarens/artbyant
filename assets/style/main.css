@@ -126,7 +126,18 @@ button{
     display: inline-block;
 }
 
-.button:hover{
+.button2{
+    background: none;
+    color: inherit;
+    border: 0.1em solid var(--color-accent);
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 10rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:hover, .button2:hover{
     transform: scale(1.05);
 }
 
