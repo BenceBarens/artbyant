@@ -1,5 +1,6 @@
 const FEED_URL = `https://antonivdgeijn.substack.com/feed`;
 const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(FEED_URL)}`;
+const colorThief = new ColorThief();
 
 function calculateReadingTime(htmlString) {
     if (!htmlString) return '1';
@@ -18,6 +19,54 @@ function formatDate(pubDateString) {
         month: 'long',
         ...(isCurrentYear ? {} : { year: 'numeric' })
     });
+}
+
+async function applyCoverColor(post) {
+    let imgUrl = post?.thumbnail;
+    if (!imgUrl && (post?.content || post?.description)) {
+        const doc = new DOMParser().parseFromString(post.content || post.description, 'text/html');
+        imgUrl = doc.querySelector('img')?.src || null;
+    }
+
+    if (!imgUrl) return;
+
+    const accentColor = await new Promise((resolve) => {
+        const img = new Image();
+        img.crossOrigin = 'Anonymous';
+
+        img.onload = () => {
+        try {
+            const palette = colorThief.getPalette(img, 8);
+            let mostVibrant = palette[0];
+            let maxSaturation = -1;
+
+            palette.forEach(([r, g, b]) => {
+            const max = Math.max(r, g, b);
+            const min = Math.min(r, g, b);
+            const saturation = max === 0 ? 0 : (max - min) / max;
+
+            if (max > 40 && saturation > maxSaturation) {
+                maxSaturation = saturation;
+                mostVibrant = [r, g, b];
+            }
+            });
+
+            const [r, g, b] = mostVibrant;
+            resolve(`rgb(${r}, ${g}, ${b})`);
+        } catch (err) {
+            resolve(null);
+        }
+        };
+
+        img.onerror = () => resolve(null);
+
+        const sep = imgUrl.includes('?') ? '&' : '?';
+        img.src = `${imgUrl}${sep}cors_bust=${Date.now()}`;
+    });
+
+    if (accentColor) {
+        document.documentElement.style.setProperty('--cover-color', accentColor);
+    }
 }
 
 async function loadPost() {
@@ -39,6 +88,8 @@ async function loadPost() {
             document.getElementById('article-content').innerHTML = '<p>No article found.</p>';
             return;
         }
+
+        await applyCoverColor(post);
 
         const subtitle = post.description ? `<p id="subtitle">${post.description}</p>` : '';
         const date = formatDate(post.pubDate);
