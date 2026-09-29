@@ -9,13 +9,38 @@ main img{
     height: auto;
 }
 
+h1{
+    margin: 0.5em 0 0.25em 0;
+}
+
+@media only screen and (max-width: 768px) {
+    h1{
+        font-size: 2.5em;
+    }
+}
+
+main #subtitle{
+    font-size: 1.4em;
+    margin: 0;
+}
+
 main .meta{
     margin-left: 0.5em;
 }
 
+main #subtitle{
+    color: var(--color-accent);
+}
+
 main figure{
     padding: 0;
-    margin: 0;
+    margin: 3em auto;
+    width: fit-content;
+}
+
+main figure img{
+    max-height: 50em;
+    object-fit: contain;
 }
 
 .image-link-expand{
