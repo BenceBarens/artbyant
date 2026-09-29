@@ -9,6 +9,10 @@ main img{
     height: auto;
 }
 
+main .meta{
+    margin-left: 0.5em;
+}
+
 main figure{
     padding: 0;
     margin: 0;
