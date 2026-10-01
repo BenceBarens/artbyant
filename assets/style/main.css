@@ -146,6 +146,11 @@ button{
     transform: scale(1.05);
 }
 
+hr{
+    border-top: 0.1em solid var(--color-secondary);
+    margin: 4em auto;
+}
+
 /* HEADER ------------------------------------------------------------------------------------ */
 
 header img{

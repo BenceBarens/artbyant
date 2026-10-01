@@ -64,7 +64,8 @@ async function loadPost() {
     const targetSlug = params.get('slug');
 
     if (!targetSlug) {
-        document.getElementById('article-content').innerHTML = '<p>No se encontró ningún artículo.</p>';
+        document.getElementById('title').textContent = "No se especificó ningún artículo";
+        document.getElementById('article-content').innerHTML = `<p id="subtitle">Elige un artículo del catálogo del blog o abre el perfil de Antoni en Substack.</p>`
         return;
     }
 
@@ -75,7 +76,8 @@ async function loadPost() {
         const post = data.items.find(item => item.link.includes(targetSlug));
 
         if (!post) {
-            document.getElementById('article-content').innerHTML = '<p>No se encontró ningún artículo.</p>';
+            document.getElementById('title').textContent = "No se pudo encontrar el artículo";
+            document.getElementById('article-content').innerHTML = `<p id="subtitle">Es posible que el artículo haya sido eliminado. Por favor, elige otro artículo del catálogo del blog o abre el perfil de Antoni en Substack.</p>`
             return;
         }
 
@@ -99,18 +101,19 @@ async function loadPost() {
         const ogImage = document.querySelector('meta[property="og:image"]');
         if (ogImage && imageUrl) ogImage.setAttribute("content", imageUrl);
 
+        document.getElementById('meta').innerHTML = `Lectura de ${readingTime} min • Publicado el <time datetime="${post.pubDate}">${date}</time>`
+        document.getElementById('title').textContent = post.title;
+
         document.getElementById('article-content').innerHTML = `
-            <a href="../" class="button2" aria-label="Back to all posts">&larr;</a>
-            <span class="meta">Lectura de ${readingTime} min • Publicado el <time datetime="${post.pubDate}">${date}</time></span>
-            <h1>${post.title}</h1>
             ${subtitle}
-            <div class="body">${post.content || post.description}</div>
-            <br><br>
-            <a href="../" class="button">Volver al blog</a> 
-            <a href="https://antonivdgeijn.substack.com/p/${targetSlug}" target="_blank" rel="noopener" class="button2">Abierto en Substack</a>
+            <div>${post.content || post.description}</div>
         `;
+
+        document.getElementById('atag-substack').href = `https://antonivdgeijn.substack.com/p/${targetSlug}`;
+
     } catch (err) {
-        document.getElementById('article-content').innerHTML = '<p>Error al cargar el artículo.</p>';
+        document.getElementById('title').textContent = "Se produjo un problema al cargar este artículo";
+        document.getElementById('article-content').innerHTML = `<p id="subtitle">Por favor, inténtalo de nuevo o lee el artículo desde el perfil de Antoni en Substack. Si el problema persiste, por favor <a href="mailto:artbyant@bencebarens.nl?subject=Art%20by%20Ant%20${err}">avísanos.</a></p><p>${err}</p>`
     }
 }
 

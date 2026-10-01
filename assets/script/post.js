@@ -64,7 +64,8 @@ async function loadPost() {
     const targetSlug = params.get('slug');
 
     if (!targetSlug) {
-        document.getElementById('article-content').innerHTML = '<p>No article found.</p>';
+        document.getElementById('title').textContent = "No article was specified";
+        document.getElementById('article-content').innerHTML = `<p id="subtitle">Choose an article from the blog catalogue or open Antoni's profile on Substack.</p>`
         return;
     }
 
@@ -75,7 +76,8 @@ async function loadPost() {
         const post = data.items.find(item => item.link.includes(targetSlug));
 
         if (!post) {
-            document.getElementById('article-content').innerHTML = '<p>No article found.</p>';
+            document.getElementById('title').textContent = "Article could not be found";
+            document.getElementById('article-content').innerHTML = `<p id="subtitle">The article may have been removed. Please choose another article from the blog catalogue or open Antoni's profile on Substack.</p>`
             return;
         }
 
@@ -99,18 +101,19 @@ async function loadPost() {
         const ogImage = document.querySelector('meta[property="og:image"]');
         if (ogImage && imageUrl) ogImage.setAttribute("content", imageUrl);
 
+        document.getElementById('meta').innerHTML = `${readingTime} min read • Posted on <time datetime="${post.pubDate}">${date}</time>`
+        document.getElementById('title').textContent = post.title;
+
         document.getElementById('article-content').innerHTML = `
-            <a href="../" class="button2" aria-label="Back to all posts">&larr;</a>
-            <span class="meta">${readingTime} min read • Posted on <time datetime="${post.pubDate}">${date}</time></span>
-            <h1>${post.title}</h1>
             ${subtitle}
-            <div class="body">${post.content || post.description}</div>
-            <br><br>
-            <a href="../" class="button">Back to blog</a> 
-            <a href="https://antonivdgeijn.substack.com/p/${targetSlug}" target="_blank" rel="noopener" class="button2">Open on Substack</a>
+            <div>${post.content || post.description}</div>
         `;
+
+        document.getElementById('atag-substack').href = `https://antonivdgeijn.substack.com/p/${targetSlug}`;
+
     } catch (err) {
-        document.getElementById('article-content').innerHTML = '<p>Error loading article.</p>';
+        document.getElementById('title').textContent = "An issue occured while loading this article";
+        document.getElementById('article-content').innerHTML = `<p id="subtitle">Please try again or try reading the article from Antoni's profile on Substack. If this issue keeps occuring, please <a href="mailto:artbyant@bencebarens.nl?subject=Art%20by%20Ant%20${err}">let us know.</a></p><p>${err}</p>`
     }
 }
 

@@ -41,7 +41,7 @@ main #subtitle{
     margin: 0;
 }
 
-main .meta{
+main #meta{
     margin-left: 0.5em;
 }
 
@@ -62,4 +62,10 @@ main figure img{
 
 .image-link-expand{
     display: none;
+}
+
+main > div:last-of-type{
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
 }
