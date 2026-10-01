@@ -74,4 +74,5 @@ main{
 .meta{
     font-size: 0.8rem;
     margin: 0 0 0.75em 0;
+    text-wrap: pretty;
 }

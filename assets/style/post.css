@@ -27,6 +27,7 @@ main img{
 h1{
     margin: 0.5em 0 0.25em 0;
     line-height: 1.1;
+    text-align: left;
 }
 
 @media only screen and (max-width: 768px) {
@@ -40,7 +41,7 @@ main #subtitle{
     margin: 0;
 }
 
-main .meta{
+main #meta{
     margin-left: 0.5em;
 }
 
@@ -61,4 +62,10 @@ main figure img{
 
 .image-link-expand{
     display: none;
+}
+
+main > div:last-of-type{
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
 }
