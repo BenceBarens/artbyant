@@ -111,8 +111,7 @@ async function loadSubstackFeed() {
         });
 
     } catch (error) {
-        container.innerHTML = `<p>No se pudieron cargar los artículos: ${error.message}</p>`;
-    }
+        container.innerHTML = `<p style="text-align:center;">Lo sentimos, estamos teniendo problemas para mostrar los artículos en este momento.<br>Por favor, visita la <a href="https://antonivdgeijn.substack.com/profile/posts" target="_blank" style="text-decoration:underline;">página de Substack de Antoni</a> para leer su blog.<br><br>Error: ${error.message}</p>`;    }
 }
 
 loadSubstackFeed();

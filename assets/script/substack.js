@@ -111,7 +111,7 @@ async function loadSubstackFeed() {
         });
 
     } catch (error) {
-        container.innerHTML = `<p>Couldn't load articles: ${error.message}</p>`;
+        container.innerHTML = `<p style="text-align:center;">Sorry, we're having some trouble showing the articles right now.<br>Please head to the <a href="https://antonivdgeijn.substack.com/profile/posts" target="_blank" style="text-decoration:underline;">Substack page of Antoni</a> to read his blog.<br><br>Error: ${error.message}</p>`;
     }
 }
 
