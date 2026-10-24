@@ -1,5 +1,4 @@
-const FEED_URL = `https://antonivdgeijn.substack.com/feed`;
-const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(FEED_URL)}`;
+const API_URL = `https://substack-proxy.artbyant.workers.dev`;
 
 function calculateReadingTime(htmlString) {
     if (!htmlString) return '1';
@@ -71,9 +70,28 @@ async function loadPost() {
 
     try {
         const res = await fetch(API_URL);
-        const data = await res.json();
+        if (!res.ok) throw new Error('No se pudieron obtener los datos del servidor.');
 
-        const post = data.items.find(item => item.link.includes(targetSlug));
+        const xmlText = await res.text();
+        const xmlDoc = new DOMParser().parseFromString(xmlText, 'text/xml');
+
+        if (xmlDoc.querySelector('parsererror')) {
+            throw new Error('Error al procesar el XML del feed.');
+        }
+
+        const posts = Array.from(xmlDoc.querySelectorAll('item')).map(item => {
+            const title = item.querySelector('title')?.textContent || '';
+            const link = item.querySelector('link')?.textContent || '';
+            const pubDate = item.querySelector('pubDate')?.textContent || '';
+            const content = item.getElementsByTagNameNS('*', 'encoded')[0]?.textContent 
+                         || item.querySelector('description')?.textContent 
+                         || '';
+            const description = item.querySelector('description')?.textContent || '';
+
+            return { title, link, pubDate, content, description };
+        });
+
+        const post = posts.find(item => item.link.includes(targetSlug));
 
         if (!post) {
             document.getElementById('title').textContent = "No se pudo encontrar el artículo";
@@ -96,7 +114,10 @@ async function loadPost() {
         if (ogTitle) ogTitle.setAttribute("content", `${post.title} | BLOG DE ANTONI`);
 
         const ogDesc = document.querySelector('meta[property="og:description"]');
-        if (ogDesc && post.description) ogDesc.setAttribute("content", post.description);
+        if (ogDesc && post.description) {
+            const cleanDesc = post.description.replace(/<[^>]*>?/gm, '').trim();
+            ogDesc.setAttribute("content", cleanDesc);
+        }
 
         const ogImage = document.querySelector('meta[property="og:image"]');
         if (ogImage && imageUrl) ogImage.setAttribute("content", imageUrl);
@@ -109,11 +130,14 @@ async function loadPost() {
             <div>${post.content || post.description}</div>
         `;
 
-        document.getElementById('atag-substack').href = `https://antonivdgeijn.substack.com/p/${targetSlug}`;
+        const substackLink = document.getElementById('atag-substack');
+        if (substackLink) {
+            substackLink.href = `https://antonivdgeijn.substack.com/p/${targetSlug}`;
+        }
 
     } catch (err) {
         document.getElementById('title').textContent = "Se produjo un problema al cargar este artículo";
-        document.getElementById('article-content').innerHTML = `<p id="subtitle">Por favor, inténtalo de nuevo o lee el artículo desde el perfil de Antoni en Substack. Si el problema persiste, por favor <a href="mailto:artbyant@bencebarens.nl?subject=Art%20by%20Ant%20${err}">avísanos.</a></p><p>${err}</p>`
+        document.getElementById('article-content').innerHTML = `<p id="subtitle">Por favor, inténtalo de nuevo o lee el artículo desde el perfil de Antoni en Substack. Si el problema persiste, por favor <a href="mailto:artbyant@bencebarens.nl?subject=Art%20by%20Ant%20${encodeURIComponent(err.message)}">avísanos.</a></p><p>${err.message}</p>`;
     }
 }
 
