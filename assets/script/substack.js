@@ -52,13 +52,13 @@ async function loadSubstackFeed() {
 
     try {
         const response = await fetch(API_URL);
-        if (!response.ok) throw new Error('Kon feed niet ophalen.');
+        if (!response.ok) throw new Error("Couldn't retrieve feed.");
 
         const xmlText = await response.text();
         const xmlDoc = new DOMParser().parseFromString(xmlText, 'text/xml');
 
         if (xmlDoc.querySelector('parsererror')) {
-            throw new Error('Fout bij verwerken van XML.');
+            throw new Error("Couldn't process XML.");
         }
 
         const items = Array.from(xmlDoc.querySelectorAll('item')).map(item => {
